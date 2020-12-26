@@ -24,6 +24,7 @@
     <ProjectGuid>{b05217f6-ac31-4f92-99c5-9cf0f9797edf}</ProjectGuid>
     <RootNamespace>ProjectDFS</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Project_DSA</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,10 +140,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DFS.h" />
+    <ClInclude Include="DSA.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DFS.cpp" />
+    <ClCompile Include="DSA.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
