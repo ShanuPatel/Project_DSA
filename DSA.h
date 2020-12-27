@@ -1,14 +1,18 @@
 #pragma once
-#include<iostream>
-#include<algorithm>
-#include<string>
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <vector>
 
 class DSA
 {
 	//Reverse an array
 	void R_arr(int arr[], int n);
-
-public:
+	void Two_sum();
+	std::vector<int> Two_sum_vector(std::vector<int>& nums, int target);
 	void Min_max_arr();
-	void Exution();
+public:
+
+	void Rev_Exution();
+	void Pub_Excute_fun();
 };
