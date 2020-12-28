@@ -1,6 +1,6 @@
 
 #include "DSA.h"
-
+#include<list>
 namespace Testcases
 {
 	void Heapify(int arr[], int n, int i) {
@@ -130,10 +130,128 @@ namespace Testcases
 
 	}
 }
+class HashTable
+{
+private:
+	static const int Hashtag = 10;
+	std::list<std::pair<int, std::string>>table[Hashtag];
+public:
+	bool bIsEmpty()const;
+	int HashFunction(int key);
+	void insertitem(int Key, std::string value);
+	void removeItem(int key);
+	void printTable();
+};
 
 int main()
 {
 	DSA daa;
 	daa.Pub_Excute_fun();
 	Testcases::Vector_Excution();
+	HashTable HT;
+	if (HT.bIsEmpty())
+	{
+		std::cout << "GoodJob: Practice on" << '\n';
+	}
+	else
+	{
+		std::cout << "try again" << '\n';
+	}
+	HT.insertitem(905, "Aran");
+	HT.insertitem(905, "raran");
+	HT.insertitem(775, "bran");
+	HT.insertitem(546, "Eran");
+	HT.insertitem(123, "Vran");
+
+	HT.printTable();
+	HT.removeItem(123);
+	HT.removeItem(100);
+
+	if (HT.bIsEmpty())
+	{
+		std::cout << "GoodJob: Practice on! Check again"<<'\n';
+	}
+	else
+	{
+		std::cout << "Good Practice more, try again" << '\n';
+	}
+
+	std::cin.get();
+}
+
+bool HashTable::bIsEmpty() const
+{
+	int sum{};
+	for (int i{}; i < Hashtag; i++)
+	{
+		sum+=table[i].size();
+	}
+	if (!sum)
+		return true;
+
+	return false;
+}
+
+int HashTable::HashFunction(int key)
+{
+	return key%Hashtag;//return modulas of the hashtable that is reminder of the table in this case
+}
+
+void HashTable::insertitem(int Key, std::string value)
+{
+	int hashvalue = HashFunction(Key);
+	auto& cell = table[hashvalue];
+	auto Itr = begin(cell);
+	bool keyexist = false;
+	for (; Itr != end(cell); Itr++)
+	{
+		if (Itr->first == Key) {
+			keyexist = true;
+			Itr->second = value;
+			std::cout << "Warning: key exists :Value replaced"<<'\n';
+			break;
+		}
+	}
+	if (!keyexist)
+	{
+		cell.emplace_back(Key, value);
+	}
+	return;
+}
+
+void HashTable::removeItem(int key)
+{
+	int hashvalue = HashFunction(key);
+	auto& cell = table[hashvalue];
+	auto Itr = begin(cell);
+	bool keyexist = false;
+	for (; Itr != end(cell); Itr++)
+	{
+		if (Itr->first == key) {
+			keyexist = true;
+			Itr = cell.erase(Itr);
+			std::cout << "Info: Item removed:" << '\n';
+			break;
+		}
+	}
+	if (!keyexist)
+	{
+		std::cout << "Warning: Key not found. Pair not removed."<<'\n';
+	}
+	return;
+}
+
+void HashTable::printTable()
+{
+	for (int i{}; i < Hashtag; i++)
+	{
+		if (table[i].size() == 0)
+			continue;
+
+		auto Itr = table[i].begin();
+		for (; Itr != table[i].end(); Itr++)
+		{
+		std::cout << "Info :Key " << Itr->first << "Value: " << Itr->second<<'\n';
+		}
+	}
 }
