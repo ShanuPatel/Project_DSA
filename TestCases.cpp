@@ -117,6 +117,39 @@ namespace Testcases
 		std::cout << "K'th smallest element is " << kthSmallest(arr, 0, n - 1, k);
 	}
 
+	int R_Integers(int x)
+	{
+		int r = 0;
+		long long sum = 0;
+		bool minus = false;
+		if (x < 0)
+			minus = true;
+		while (abs(x) > 0)
+		{
+			r = abs(x) % 10;
+			sum = sum * 10 + r;
+			x /= 10;
+		}
+		if (minus)
+			sum *= -1;
+		if (sum > INT_MAX || sum < INT_MIN)
+			return 0;
+		return sum;
+	}
+	bool Palin(int x)
+	{
+		if (x < 0 || (x != 0 && x % 10 == 0))
+			return false;
+		int sum = 0;
+		while (x>sum)
+		{
+			sum = sum * 10 + x % 10;
+			x = x / 10;
+		}
+		std::cout << x;
+
+		return (x == sum) || (x == sum / 10);
+	}
 	void Vector_Excution()
 	{
 		std::vector<int> nums = { 3,2,3 };
@@ -127,7 +160,7 @@ namespace Testcases
 		int target = 6;
 		//Testcases::Two_sum_vector(nums, target);
 		//std::cout << "indeies:" << i << " indices:" << j << '\n';
-
+		Testcases::Palin(121);
 	}
 }
 class HashTable

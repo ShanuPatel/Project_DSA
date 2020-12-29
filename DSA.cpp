@@ -14,6 +14,27 @@ void DSA::R_arr(int arr[], int n )
 	}
 }
 
+int DSA::R_Integers(int x)
+{
+
+	int r = 0;
+	int sum = 0;
+	bool minus = false;
+	if (x < 0)
+		minus = true;
+	while (abs(x) > 0)
+	{
+		r = abs(x) % 10;
+		sum = sum * 10 + r;
+		x /= 10;
+	}
+	if (minus)
+		sum *= -1;
+	if (sum > INT_MAX || sum < INT_MIN)
+		return 0;
+	return sum;
+}
+
 // max min of array
 void DSA::Min_max_arr()
 {
