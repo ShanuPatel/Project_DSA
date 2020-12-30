@@ -12,6 +12,7 @@ class DSA
 	void Two_sum();
 	std::vector<int> Two_sum_vector(std::vector<int>& nums, int target);
 	void Min_max_arr();
+	int maxSubArray(std::vector<int>& nums);
 public:
 
 	void Rev_Exution();
