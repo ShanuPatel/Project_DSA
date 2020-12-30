@@ -120,7 +120,7 @@ namespace Testcases
 	int R_Integers(int x)
 	{
 		int r = 0;
-		long long sum = 0;
+		int sum = 0;
 		bool minus = false;
 		if (x < 0)
 			minus = true;

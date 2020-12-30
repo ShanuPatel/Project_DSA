@@ -14,6 +14,7 @@ void DSA::R_arr(int arr[], int n )
 	}
 }
 
+//reverse of integer
 int DSA::R_Integers(int x)
 {
 
@@ -35,7 +36,7 @@ int DSA::R_Integers(int x)
 	return sum;
 }
 
-// max min of array
+// max min heap of array
 void DSA::Min_max_arr()
 {
 	int i, j, min_idx;
@@ -55,6 +56,21 @@ void DSA::Min_max_arr()
 		}
 	}
 	std::cout << "Smallest Element :"<<arr[0] << "\nLargest Element:"<<arr[n-1];
+}
+
+//Kadanes algo
+int DSA::maxSubArray(std::vector<int>& nums)
+{
+	int sum = 0;
+	int Max = INT_MIN;
+	for (auto Itr : nums)
+	{
+		sum += Itr;
+		Max = std::max(sum, Max);
+		if (sum < 0)
+			sum = 0;
+	}
+	return Max;
 }
 
 //sum of two numbers
@@ -84,6 +100,7 @@ void DSA::Two_sum()
 	}
 }
 
+//Two sum problem 4ms brute
 std::vector<int> DSA::Two_sum_vector(std::vector<int>& nums, int target)
 {
 	{
