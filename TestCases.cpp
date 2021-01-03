@@ -1,8 +1,26 @@
 
 #include "DSA.h"
 #include<list>
+
 namespace Testcases
 {
+	//move all negative at the starting of the list
+	void Rearrange_negatives(int arr[], int n)
+	{
+		int j = 0;
+		for (int i = 0; i <= n; i++)
+		{
+			if (arr[i] < 0)
+			{
+				if (i != j)
+					std::swap(arr[i], arr[j]);
+				j++;
+			}
+		}
+	}
+
+
+	//min max sof the kth element
 	void Heapify(int arr[], int n, int i) {
 		int largest = i;
 		int L = 2 * i + 1;
@@ -179,36 +197,16 @@ public:
 int main()
 {
 	DSA daa;
-	daa.Pub_Excute_fun();
-	Testcases::Vector_Excution();
-	HashTable HT;
-	if (HT.bIsEmpty())
-	{
-		std::cout << "GoodJob: Practice on" << '\n';
-	}
-	else
-	{
-		std::cout << "try again" << '\n';
-	}
-	HT.insertitem(905, "Aran");
-	HT.insertitem(905, "raran");
-	HT.insertitem(775, "bran");
-	HT.insertitem(546, "Eran");
-	HT.insertitem(123, "Vran");
+	//daa.Pub_Excute_fun();
+	//Testcases::Vector_Excution();
+	int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
+	int n = sizeof(arr) / sizeof(arr[0]);
 
-	HT.printTable();
-	HT.removeItem(123);
-	HT.removeItem(100);
-
-	if (HT.bIsEmpty())
+	Testcases::Rearrange_negatives(arr, n);
+	for (int i = 0; i < n; i++)
 	{
-		std::cout << "GoodJob: Practice on! Check again"<<'\n';
+		std::cout << arr[i]<<' ';
 	}
-	else
-	{
-		std::cout << "Good Practice more, try again" << '\n';
-	}
-
 	std::cin.get();
 }
 
@@ -286,5 +284,33 @@ void HashTable::printTable()
 		{
 		std::cout << "Info :Key " << Itr->first << "Value: " << Itr->second<<'\n';
 		}
+	}
+
+	HashTable HT;
+	if (HT.bIsEmpty())
+	{
+		std::cout << "GoodJob: Practice on" << '\n';
+	}
+	else
+	{
+		std::cout << "try again" << '\n';
+	}
+	HT.insertitem(905, "Aran");
+	HT.insertitem(905, "raran");
+	HT.insertitem(775, "bran");
+	HT.insertitem(546, "Eran");
+	HT.insertitem(123, "Vran");
+
+	HT.printTable();
+	HT.removeItem(123);
+	HT.removeItem(100);
+
+	if (HT.bIsEmpty())
+	{
+		std::cout << "GoodJob: Practice on! Check again" << '\n';
+	}
+	else
+	{
+		std::cout << "Good Practice more, try again" << '\n';
 	}
 }

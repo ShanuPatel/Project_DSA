@@ -146,6 +146,7 @@ std::vector<int> DSA::Two_sum_vector(std::vector<int>& nums, int target)
 	}
 }
 
+
 void DSA::Rev_Exution()
 {
 	int arr[] = { 6,5,4,3,2,1 };
