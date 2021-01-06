@@ -1,19 +1,35 @@
 
 #include "DSA.h"
-#include<list>
+#include <list>
 
 namespace Testcases
-{
+{	//arr[]={1,2,3,4,5}
+		//	0,1,2,3,4
+	//cyclic rotate the array by one
+	void cycle_by_one(int arr[], int n)
+	{
+		for (int i = 0; i <= n-1; i++)
+		{
+			std::swap(arr[i], arr[n - 1]);
+		}
+	}
+
+
 	//move all negative at the starting of the list
 	void Rearrange_negatives(int arr[], int n)
 	{
 		int j = 0;
-		for (int i = 0; i <= n; i++)
+		for (int i = 0; i <= n-1; i++)
 		{
 			if (arr[i] < 0)
 			{
 				if (i != j)
 					std::swap(arr[i], arr[j]);
+				else
+				{
+					if (i == j)
+						continue;
+				}
 				j++;
 			}
 		}
@@ -159,7 +175,7 @@ namespace Testcases
 		if (x < 0 || (x != 0 && x % 10 == 0))
 			return false;
 		int sum = 0;
-		while (x>sum)
+		while (x > sum)
 		{
 			sum = sum * 10 + x % 10;
 			x = x / 10;
@@ -199,13 +215,16 @@ int main()
 	DSA daa;
 	//daa.Pub_Excute_fun();
 	//Testcases::Vector_Excution();
-	int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
+	//int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
+	int arr[] = { 9, 8, 7, 6, 4, 2, 1, 3 };
+	//int arr[] = { 1, 2, 3, 4, 5 };
 	int n = sizeof(arr) / sizeof(arr[0]);
 
-	Testcases::Rearrange_negatives(arr, n);
+	Testcases::cycle_by_one(arr, n);
+	//Testcases::Rearrange_negatives(arr, n);
 	for (int i = 0; i < n; i++)
 	{
-		std::cout << arr[i]<<' ';
+		std::cout << arr[i] << ' ';
 	}
 	std::cin.get();
 }
@@ -215,7 +234,7 @@ bool HashTable::bIsEmpty() const
 	int sum{};
 	for (int i{}; i < Hashtag; i++)
 	{
-		sum+=table[i].size();
+		sum += table[i].size();
 	}
 	if (!sum)
 		return true;
@@ -225,7 +244,7 @@ bool HashTable::bIsEmpty() const
 
 int HashTable::HashFunction(int key)
 {
-	return key%Hashtag;//return modulas of the hashtable that is reminder of the table in this case
+	return key % Hashtag;//return modulas of the hashtable that is reminder of the table in this case
 }
 
 void HashTable::insertitem(int Key, std::string value)
@@ -239,7 +258,7 @@ void HashTable::insertitem(int Key, std::string value)
 		if (Itr->first == Key) {
 			keyexist = true;
 			Itr->second = value;
-			std::cout << "Warning: key exists :Value replaced"<<'\n';
+			std::cout << "Warning: key exists :Value replaced" << '\n';
 			break;
 		}
 	}
@@ -267,7 +286,7 @@ void HashTable::removeItem(int key)
 	}
 	if (!keyexist)
 	{
-		std::cout << "Warning: Key not found. Pair not removed."<<'\n';
+		std::cout << "Warning: Key not found. Pair not removed." << '\n';
 	}
 	return;
 }
@@ -282,7 +301,7 @@ void HashTable::printTable()
 		auto Itr = table[i].begin();
 		for (; Itr != table[i].end(); Itr++)
 		{
-		std::cout << "Info :Key " << Itr->first << "Value: " << Itr->second<<'\n';
+			std::cout << "Info :Key " << Itr->first << "Value: " << Itr->second << '\n';
 		}
 	}
 
