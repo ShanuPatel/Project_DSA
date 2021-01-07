@@ -13,6 +13,10 @@ class DSA
 	std::vector<int> Two_sum_vector(std::vector<int>& nums, int target);
 	void Min_max_arr();
 	int maxSubArray(std::vector<int>& nums);
+	void cycle_by_one(int arr[], int n);
+	void Rearrange_negatives(int arr[], int n);
+    int getMinDiff(int arr[], int n, int k);
+
 public:
 
 	void Rev_Exution();
