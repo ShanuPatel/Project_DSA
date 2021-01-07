@@ -73,6 +73,54 @@ int DSA::maxSubArray(std::vector<int>& nums)
 	return Max;
 }
 
+//cyclic rotate the array by one
+void DSA::cycle_by_one(int arr[], int n)
+{
+	{
+		for (int i = 0; i <= n - 1; i++)
+		{
+			std::swap(arr[i], arr[n - 1]);
+		}
+	}
+}
+
+//move all negative at the starting of the list
+void DSA::Rearrange_negatives(int arr[], int n)
+{
+	{
+		int j = 0;
+		for (int i = 0; i <= n - 1; i++)
+		{
+			if (arr[i] < 0)
+			{
+				if (i != j)
+					std::swap(arr[i], arr[j]);
+				else
+					j++;
+			}
+		}
+	}
+}
+
+//Minimize the maximum difference between the heights
+int DSA::getMinDiff(int arr[], int n, int k)
+{
+	std::sort(arr, arr + n);
+	int i, mx, mn, ans;
+	ans = arr[n - 1] - arr[0];  // this can be one possible solution
+
+	for (i = 0; i < n; i++)
+	{
+		if (arr[i] >= k)  // since height of tower can't be -ve so taking only +ve heights
+		{
+			mn = std::min(arr[0] + k, arr[i] - k);
+			mx = std::max(arr[n - 1] - k, arr[i - 1] + k);
+			ans = std::min(ans, mx - mn);
+		}
+	}
+	return ans;
+}
+
 //sum of two numbers
 void DSA::Two_sum()
 {
@@ -145,7 +193,6 @@ std::vector<int> DSA::Two_sum_vector(std::vector<int>& nums, int target)
 		return results;
 	}
 }
-
 
 void DSA::Rev_Exution()
 {

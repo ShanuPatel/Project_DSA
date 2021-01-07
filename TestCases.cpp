@@ -3,37 +3,40 @@
 #include <list>
 
 namespace Testcases
+	//arr2[]={6,1,2,3,4}
 {	//arr[]={1,2,3,4,5}
-		//	0,1,2,3,4
-	//cyclic rotate the array by one
-	void cycle_by_one(int arr[], int n)
+	  //index 0,1,2,3,4
+	//find union of two array
+	void UnionArr(int arr[], int arr2[], int n, int m)
 	{
-		for (int i = 0; i <= n-1; i++)
+		int i=0;
+		int j=0;
+		while (i<n && j<m)
 		{
-			std::swap(arr[i], arr[n - 1]);
-		}
-	}
+			if (arr[i] < arr2[j])
+				std::cout << arr[i++] << ' ';
+			else if (arr2[j] < arr[i])
+				std::cout << arr2[j++] << ' ';
 
-
-	//move all negative at the starting of the list
-	void Rearrange_negatives(int arr[], int n)
-	{
-		int j = 0;
-		for (int i = 0; i <= n-1; i++)
-		{
-			if (arr[i] < 0)
+			else
 			{
-				if (i != j)
-					std::swap(arr[i], arr[j]);
-				else
-				{
-					if (i == j)
-						continue;
-				}
-				j++;
+				std::cout << arr2[j++] << ' ';
+				i++;
 			}
 		}
+		while (i<n)
+		{
+			std::cout << arr[i++]<< ' ';
+		}
+		while (j < m)
+		{
+			std::cout << arr2[j++] << ' ';
+		}
 	}
+
+
+
+
 
 
 	//min max sof the kth element
@@ -216,16 +219,18 @@ int main()
 	//daa.Pub_Excute_fun();
 	//Testcases::Vector_Excution();
 	//int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
-	int arr[] = { 9, 8, 7, 6, 4, 2, 1, 3 };
-	//int arr[] = { 1, 2, 3, 4, 5 };
+	//int arr[] = { 9, 8, 7, 6, 4, 2, 1, 3 };
+	int arr[] = { 1, 2, 3, 4, 5 };
+	int arr2[] = { 6, 1, 2, 3, 4 };
 	int n = sizeof(arr) / sizeof(arr[0]);
-
-	Testcases::cycle_by_one(arr, n);
+	int m = sizeof(arr2) / sizeof(arr2[0]);
+	/*Testcases::cycle_by_one(arr, n);*/
 	//Testcases::Rearrange_negatives(arr, n);
-	for (int i = 0; i < n; i++)
+	Testcases::UnionArr(arr, arr2, n, m);
+	/*for (int i = 0; i < n; i++)
 	{
 		std::cout << arr[i] << ' ';
-	}
+	}*/
 	std::cin.get();
 }
 
