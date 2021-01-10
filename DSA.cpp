@@ -1,5 +1,27 @@
 #include "DSA.h"
 
+// minimum number of jump to the end
+int DSA::jump_To_end(int arr[], int n)
+{
+	if (n == 1)
+	{
+		return 0;
+	}
+	int res = INT_MAX;
+
+	for (int i = n - 2; i >= 0; i--)
+	{
+		if (i + arr[i] >= n - 1)
+		{
+			int sub = jump_To_end(arr, i + 1);
+			if (sub != INT_MAX)
+			{
+				res = std::min(res, sub + 1);
+			}
+		}
+	}
+	return res;
+}
 //reverse of array
 void DSA::R_arr(int arr[], int n )
 {
@@ -211,5 +233,9 @@ void DSA::Pub_Excute_fun()
 {
 	DSA daa;
 	daa.Two_sum();
+	int arr[] = { 1, 2, 3, 4, 5 };
+	int arr2[] = { 6, 1, 2, 3, 4 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int m = sizeof(arr2) / sizeof(arr2[0]);
+	std::cout << "MiniumumJumps:" << daa.jump_To_end(arr, n);
 }
-

@@ -7,7 +7,13 @@ namespace Testcases
 {	//arr[]={1,2,3,4,5}
 	  //index 0,1,2,3,4
 	//find union of two array
-	void UnionArr(int arr[], int arr2[], int n, int m)
+
+	////minimum numbers of jumps need to reach end of the array
+
+
+
+
+void UnionArr(int arr[], int arr2[], int n, int m)
 	{
 		int i=0;
 		int j=0;
@@ -33,11 +39,6 @@ namespace Testcases
 			std::cout << arr2[j++] << ' ';
 		}
 	}
-
-
-
-
-
 
 	//min max sof the kth element
 	void Heapify(int arr[], int n, int i) {
@@ -231,6 +232,7 @@ int main()
 	{
 		std::cout << arr[i] << ' ';
 	}*/
+	daa.Pub_Excute_fun();
 	std::cin.get();
 }
 

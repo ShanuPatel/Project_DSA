@@ -16,7 +16,7 @@ class DSA
 	void cycle_by_one(int arr[], int n);
 	void Rearrange_negatives(int arr[], int n);
     int getMinDiff(int arr[], int n, int k);
-
+	int jump_To_end(int arr[], int n);
 public:
 
 	void Rev_Exution();
