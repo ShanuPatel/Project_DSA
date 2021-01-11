@@ -17,6 +17,8 @@ class DSA
 	void Rearrange_negatives(int arr[], int n);
     int getMinDiff(int arr[], int n, int k);
 	int jump_To_end(int arr[], int n);
+	int findDuplicate3(std::vector<int>& nums);
+
 public:
 
 	void Rev_Exution();
