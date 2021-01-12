@@ -24,3 +24,17 @@ public:
 	void Rev_Exution();
 	void Pub_Excute_fun();
 };
+class BST
+{
+	int data;
+	BST* left;
+	BST* right;
+
+	BST* GetNewNode(int data);
+	BST* Insert_BST(BST* root, int data);
+	bool search_BST(BST* root, int data);
+
+public:
+
+	void Run_BST();
+};

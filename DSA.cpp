@@ -261,3 +261,65 @@ void DSA::Pub_Excute_fun()
 	int m = sizeof(arr2) / sizeof(arr2[0]);
 	std::cout << "MiniumumJumps:" << daa.jump_To_end(arr, n);
 }
+
+BST* BST::GetNewNode(int data)
+{
+	BST* newNode = new BST();
+	newNode->data = data;
+	newNode->left = newNode->right = NULL;
+	return newNode;
+}
+
+BST* BST::Insert_BST(BST* root, int data)
+{
+	if (root == NULL)
+	{
+		root = GetNewNode(data);
+	}
+	else if (data <= root->data)
+	{
+		root->left = Insert_BST(root->left, data);
+	}
+	else
+	{
+		root->right = Insert_BST(root->right, data);
+	}
+	return root;
+}
+
+bool BST::search_BST(BST* root, int data)
+{
+	if (root == NULL)
+	{
+		return false;
+	}
+	else if (root->data == data)
+		return true;
+
+	else if (data <= root->data)
+		return search_BST(root->left, data);
+
+	else
+	{
+		return search_BST(root->right, data);
+	}
+}
+
+void BST::Run_BST()
+{
+	BST* root = NULL;
+	root = Insert_BST(root, 15);
+	root = Insert_BST(root, 55);
+	root = Insert_BST(root, 45);
+	root = Insert_BST(root, 35);
+	root = Insert_BST(root, 25);
+
+	int number;
+	std::cout << "Enter the number to be searched\n";
+	std::cin >> number;
+
+	if (search_BST(root, number) == true)
+		std::cout << "Number Found \n";
+	else
+		std::cout << "Not Found\n";
+}
