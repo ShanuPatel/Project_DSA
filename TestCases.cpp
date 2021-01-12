@@ -201,6 +201,80 @@ void UnionArr(int arr[], int arr2[], int n, int m)
 		Testcases::Palin(121);
 	}
 }
+//#include <iostream>
+//struct BST
+//{
+//	int data;
+//	BST* left;
+//	BST* right;
+//};
+//
+//BST* GetNewNode(int data)
+//{
+//	BST* newNode = new BST();
+//	newNode->data = data;
+//	newNode->left = newNode->right = NULL;
+//	return newNode;
+//}
+//
+//BST* Insert_BST(BST* root, int data);
+//bool search_BST(BST* root, int data);
+//
+//int main()
+//{
+//	BST* root = NULL;
+//	root = Insert_BST(root, 15);
+//	root = Insert_BST(root, 55);
+//	root = Insert_BST(root, 45);
+//	root = Insert_BST(root, 35);
+//	root = Insert_BST(root, 25);
+//
+//	int number;
+//	std::cout << "Enter the number to be searched\n";
+//	std::cin >> number;
+//
+//	if (search_BST(root, number) == true)
+//		std::cout << "Number Found \n";
+//	else
+//		std::cout << "Not Found\n";
+//}
+//
+//BST* Insert_BST(BST* root, int data)
+//{
+//	if (root == NULL)
+//	{
+//		root = GetNewNode(data);
+//	}
+//	else if (data <= root->data)
+//	{
+//		root->left = Insert_BST(root->left, data);
+//	}
+//	else
+//	{
+//		root->right = Insert_BST(root->right, data);
+//	}
+//	return root;
+//}
+//
+//
+//bool search_BST(BST* root, int data)
+//{
+//	if (root == NULL)
+//	{
+//		return false;
+//	}
+//	else if (root->data == data)
+//		return true;
+//
+//	else if (data <= root->data)
+//		return search_BST(root->left, data);
+//
+//	else
+//	{
+//		return search_BST(root->right, data);
+//	}
+//
+//}
 class HashTable
 {
 private:
@@ -233,6 +307,11 @@ int main()
 		std::cout << arr[i] << ' ';
 	}*/
 	daa.Pub_Excute_fun();
+
+	//bst Implementation
+	BST* bst = NULL;
+	bst->Run_BST();
+	std::cin.get();
 	std::cin.get();
 }
 
