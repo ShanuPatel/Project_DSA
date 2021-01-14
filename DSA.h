@@ -18,6 +18,7 @@ class DSA
     int getMinDiff(int arr[], int n, int k);
 	int jump_To_end(int arr[], int n);
 	int findDuplicate3(std::vector<int>& nums);
+	int Long_subsequnce(int arr[], int n);
 
 public:
 

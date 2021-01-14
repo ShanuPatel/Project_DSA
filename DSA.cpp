@@ -44,6 +44,40 @@ int DSA::findDuplicate3(std::vector<int>& nums)
 	}
 	return -1;
 }
+
+//Longest consecutive subsequence
+int DSA::Long_subsequnce(int arr[], int n)
+{
+	int	Init_no = 0;
+	int Count = 0;
+
+	std::sort(arr, arr+n);
+
+	std::vector<int>vec;
+	vec.push_back(arr[0]);
+
+	for (int i = 1; i < n; i++)
+	{
+		if (arr[i] != arr[i - 1])
+		{
+			vec.push_back(arr[i]);
+		}
+	}
+	for (int i = 0; i < vec.size(); i++)
+	{
+		if (i < 0 && vec[i] == vec[i - 1] + 1)
+		{
+			Count++;
+		}
+		else
+		{
+			Count = 1;
+		}
+		Init_no = std::max(Init_no, Count);
+	}
+	return Init_no;
+}
+
 //reverse of array
 void DSA::R_arr(int arr[], int n )
 {
