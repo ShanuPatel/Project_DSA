@@ -19,6 +19,7 @@ class DSA
 	int jump_To_end(int arr[], int n);
 	int findDuplicate3(std::vector<int>& nums);
 	int Long_subsequnce(int arr[], int n);
+	int Dupli_no_arr(std::vector<int>& nums);
 
 public:
 
