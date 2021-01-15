@@ -78,6 +78,21 @@ int DSA::Long_subsequnce(int arr[], int n)
 	return Init_no;
 }
 
+int DSA::Dupli_no_arr(std::vector<int>& nums)
+{
+	int temp;
+	std::sort(nums.begin(), nums.end());
+	for (size_t i = 0; i < nums.size(); i++)
+	{
+		temp = nums[i];
+		if (nums[i + 1] == temp)
+		{
+			std::cout << temp;
+		}
+	}
+	return temp;
+}
+
 //reverse of array
 void DSA::R_arr(int arr[], int n )
 {
