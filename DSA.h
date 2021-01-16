@@ -20,6 +20,7 @@ class DSA
 	int findDuplicate3(std::vector<int>& nums);
 	int Long_subsequnce(int arr[], int n);
 	int Dupli_no_arr(std::vector<int>& nums);
+	int Max_profit(std::vector<int>& prices);
 
 public:
 

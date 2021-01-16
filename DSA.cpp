@@ -93,6 +93,19 @@ int DSA::Dupli_no_arr(std::vector<int>& nums)
 	return temp;
 }
 
+int DSA::Max_profit(std::vector<int>& prices)
+{
+	int Max_profit = 0;
+	int Min_price = INT_MAX;
+
+	for (size_t i = 0; i < prices.size(); i++)
+	{
+		Min_price = std::min(Min_price, prices[i]);
+		Max_profit = (std::max(Max_profit, prices[i] - Min_price));
+	}
+	return Max_profit;
+}
+
 //reverse of array
 void DSA::R_arr(int arr[], int n )
 {
