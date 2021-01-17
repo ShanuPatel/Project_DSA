@@ -311,7 +311,7 @@ int main()
 	//bst Implementation
 	BST* bst = NULL;
 	bst->Run_BST();
-	std::cin.get();
+
 	std::cin.get();
 }
 

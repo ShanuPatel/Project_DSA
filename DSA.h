@@ -22,6 +22,10 @@ class DSA
 	int Dupli_no_arr(std::vector<int>& nums);
 	int Max_profit(std::vector<int>& prices);
 
+	// This function finds factorial of large numbers
+	int Multiply_fact_largest(int x, int res[], int Size);
+	void Fact_largest(int n);
+
 public:
 
 	void Rev_Exution();
