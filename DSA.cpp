@@ -1,5 +1,6 @@
 #include "DSA.h"
 
+#define MAX 500
 // minimum number of jump to the end
 int DSA::jump_To_end(int arr[], int n)
 {
@@ -63,7 +64,7 @@ int DSA::Long_subsequnce(int arr[], int n)
 			vec.push_back(arr[i]);
 		}
 	}
-	for (int i = 0; i < vec.size(); i++)
+	for (size_t i = 0; i < vec.size(); i++)
 	{
 		if (i < 0 && vec[i] == vec[i - 1] + 1)
 		{
@@ -80,7 +81,7 @@ int DSA::Long_subsequnce(int arr[], int n)
 
 int DSA::Dupli_no_arr(std::vector<int>& nums)
 {
-	int temp;
+	int temp = {};
 	std::sort(nums.begin(), nums.end());
 	for (size_t i = 0; i < nums.size(); i++)
 	{
@@ -104,6 +105,39 @@ int DSA::Max_profit(std::vector<int>& prices)
 		Max_profit = (std::max(Max_profit, prices[i] - Min_price));
 	}
 	return Max_profit;
+}
+
+int DSA::Multiply_fact_largest(int x, int res[], int Size)
+{
+	int carry = 0;
+	for (int i = 0; i < Size; i++)
+	{
+		int prod = res[i] * x + carry;
+		res[i] = prod % 10;
+		carry = prod / 10;
+	}
+	while (carry)
+	{
+		res[Size] = carry % 10;
+		carry = carry / 10;
+		Size++;
+	}
+	return Size;
+}
+
+void DSA::Fact_largest(int n)
+{
+	int res[MAX];
+	res[0] = 1;
+	int R_size = 1;
+	for (int x = 2; x <= n; x++)
+	{
+		R_size = Multiply_fact_largest(x, res, R_size);
+	}
+	std::cout<<'\n';
+	std::cout << "Factorial of given number is \n";
+	for (int i = R_size - 1; i >= 0; i--)
+		std::cout << res[i];
 }
 
 //reverse of array
@@ -322,6 +356,7 @@ void DSA::Pub_Excute_fun()
 	int n = sizeof(arr) / sizeof(arr[0]);
 	int m = sizeof(arr2) / sizeof(arr2[0]);
 	std::cout << "MiniumumJumps:" << daa.jump_To_end(arr, n);
+	Fact_largest(100);
 }
 
 BST* BST::GetNewNode(int data)
