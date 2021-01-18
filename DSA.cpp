@@ -140,6 +140,21 @@ void DSA::Fact_largest(int n)
 		std::cout << res[i];
 }
 
+//Count pairs with given sum
+int DSA::countpair_sum(int arr[], int n, int sum)
+{
+	int count = 0;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[i] + arr[j] == sum)
+				count++;
+		}
+	}
+	return count;
+}
+
 //reverse of array
 void DSA::R_arr(int arr[], int n )
 {
