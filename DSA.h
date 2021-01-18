@@ -26,6 +26,8 @@ class DSA
 	int Multiply_fact_largest(int x, int res[], int Size);
 	void Fact_largest(int n);
 
+	int countpair_sum(int arr[], int n, int sum);
+
 public:
 
 	void Rev_Exution();

@@ -312,6 +312,10 @@ int main()
 	BST* bst = NULL;
 	bst->Run_BST();
 
+	////Pointer to pointer
+	//int** a = new int* ();
+	//*a = new int();
+
 	std::cin.get();
 }
 
