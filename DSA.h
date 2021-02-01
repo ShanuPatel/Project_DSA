@@ -27,9 +27,11 @@ class DSA
 	void Fact_largest(int n);
 
 	int countpair_sum(int arr[], int n, int sum);
+	
 
 public:
-
+	//Maximum profit by buyingand selling a share at most twice
+	int maxProfit(int price[], int n);
 	void Rev_Exution();
 	void Pub_Excute_fun();
 };
