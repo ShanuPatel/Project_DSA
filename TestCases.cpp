@@ -11,9 +11,7 @@ namespace Testcases
 	////minimum numbers of jumps need to reach end of the array
 
 
-
-
-void UnionArr(int arr[], int arr2[], int n, int m)
+	void UnionArr(int arr[], int arr2[], int n, int m)
 	{
 		int i=0;
 		int j=0;
@@ -301,16 +299,18 @@ int main()
 	int m = sizeof(arr2) / sizeof(arr2[0]);
 	/*Testcases::cycle_by_one(arr, n);*/
 	//Testcases::Rearrange_negatives(arr, n);
-	Testcases::UnionArr(arr, arr2, n, m);
+	//Testcases::UnionArr(arr, arr2, n, m);
 	/*for (int i = 0; i < n; i++)
 	{
 		std::cout << arr[i] << ' ';
 	}*/
-	daa.Pub_Excute_fun();
-
+	//daa.Pub_Excute_fun();
+	int price[] = { 2, 30, 15, 10, 8, 25, 80 };
+	int n1 = sizeof(price) / sizeof(price[0]);
+	std::cout << "Maximum Profit = " << daa.maxProfit(price, n1);
 	//bst Implementation
-	BST* bst = NULL;
-	bst->Run_BST();
+	//BST* bst = NULL;
+	//bst->Run_BST();
 
 	////Pointer to pointer
 	//int** a = new int* ();
