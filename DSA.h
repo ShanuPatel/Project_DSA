@@ -27,7 +27,8 @@ class DSA
 	void Fact_largest(int n);
 
 	int countpair_sum(int arr[], int n, int sum);
-	
+
+
 
 public:
 	//Maximum profit by buyingand selling a share at most twice
@@ -35,6 +36,7 @@ public:
 	void Rev_Exution();
 	void Pub_Excute_fun();
 };
+
 class BST
 {
 	int data;
@@ -48,4 +50,70 @@ class BST
 public:
 
 	void Run_BST();
+};
+
+//LinkedList
+class Node
+{
+	int data;
+	Node* Next;
+
+public:
+	int GetData()
+	{
+		return data;
+	}
+	void SetData(int Data)
+	{
+		data = Data;
+	}
+
+	Node* GetNext()
+	{
+		return Next;
+	}
+
+	void SetNext(Node* next)
+	{
+		Next = next;
+	}
+
+	Node* Insert(Node** Head, int x)
+	{
+		Node* temp = new Node();
+
+		temp->SetData(x);
+		temp->SetNext(*Head);
+
+		*Head = temp;
+		return *Head;
+		delete temp;
+	}
+
+	void PrintList(Node* Head)
+	{
+		std::cout << "Data list : ";
+
+		while (Head != nullptr)
+		{
+			std::cout << " " << Head->GetData();
+			Head = Head->GetNext();
+		}
+		std::cout << "\n";
+	}
+	void RunLinkedList()
+	{
+		Node* Head = nullptr;
+		int x, n;
+
+		std::cout << "Enter the ListRange:\n";
+		std::cin >> n;
+		for (int i = 0; i < n; i++)
+		{
+			std::cout << "Enter The " << i << " Number: \n";
+			std::cin >> x;
+			Insert(&Head, x);
+			PrintList(Head);
+		}
+	}
 };
