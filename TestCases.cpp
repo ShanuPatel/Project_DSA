@@ -2,6 +2,75 @@
 #include "DSA.h"
 #include <list>
 
+
+void merge(int arr[], int l, int m, int n);
+void merge_sort(int arr[], int l, int r)
+{
+	if (l < r)
+	{
+		int m = (l + r) / 2;
+		merge_sort(arr, l, m);
+		merge_sort(arr, m + 1, r);
+		merge(arr, l, m, r);
+	}
+}
+
+void merge(int arr[], int l, int m, int r)
+{
+	int n1 = m - l + 1;
+	int n2 = r - m;
+
+// making temp arrays
+	int *L=new int[n1];
+	int *R=new int[n2];
+
+	for (int i = 0; i < n1; i++)
+	{
+		L[i] = arr[l + i];
+	}
+
+	for (int j = 0; j < n2; j++)
+	{
+		R[j] = arr[m + 1 + j];
+	}
+
+	int i = 0;
+	int j = 0;
+	int k = l;
+
+	while (i < n1 && j < n2)
+	{
+		if (L[i] < R[j])
+		{
+			arr[k] = L[i];
+
+			i++;
+		}
+		else
+		{
+			arr[k] = R[j];
+			j++;
+		}
+		k++;
+	}
+
+	while (i < n1)
+	{
+		arr[k] = L[i];
+		i++;
+		k++;
+	}
+
+	while (j < n2)
+	{
+		arr[k] = R[j];
+		j++;
+		k++;
+	}
+	delete[] L;
+	delete[] R;
+}
+
 namespace Testcases
 	//arr2[]={6,1,2,3,4}
 {	//arr[]={1,2,3,4,5}
@@ -9,7 +78,6 @@ namespace Testcases
 	//find union of two array
 
 	////minimum numbers of jumps need to reach end of the array
-
 
 	void UnionArr(int arr[], int arr2[], int n, int m)
 	{
@@ -288,33 +356,47 @@ public:
 
 int main()
 {
-	DSA daa;
-	//daa.Pub_Excute_fun();
-	//Testcases::Vector_Excution();
-	//int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
-	//int arr[] = { 9, 8, 7, 6, 4, 2, 1, 3 };
-	int arr[] = { 1, 2, 3, 4, 5 };
-	int arr2[] = { 6, 1, 2, 3, 4 };
-	int n = sizeof(arr) / sizeof(arr[0]);
-	int m = sizeof(arr2) / sizeof(arr2[0]);
-	/*Testcases::cycle_by_one(arr, n);*/
-	//Testcases::Rearrange_negatives(arr, n);
-	//Testcases::UnionArr(arr, arr2, n, m);
-	/*for (int i = 0; i < n; i++)
-	{
-		std::cout << arr[i] << ' ';
-	}*/
-	//daa.Pub_Excute_fun();
-	int price[] = { 2, 30, 15, 10, 8, 25, 80 };
-	int n1 = sizeof(price) / sizeof(price[0]);
-	std::cout << "Maximum Profit = " << daa.maxProfit(price, n1);
-	//bst Implementation
-	//BST* bst = NULL;
-	//bst->Run_BST();
+	/**merge sort*/
+	//int arr[] = { 12, 11, 13, 5, 6, 7 };
+	//int n = sizeof(arr) / sizeof(arr[0]);
+	//merge_sort(arr, 0, n - 1);
+	//for (int i = 0; i < n; i++)
+	//{
+	//	std::cout << arr[i] << " ";
+	//}
 
-	////Pointer to pointer
-	//int** a = new int* ();
-	//*a = new int();
+	/**Data Structure Main Object Crearion*/
+	//DSA daa;
+	////daa.Pub_Excute_fun();
+	////Testcases::Vector_Excution();
+	////int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
+	////int arr[] = { 9, 8, 7, 6, 4, 2, 1, 3 };
+	//int arr[] = { 1, 2, 3, 4, 5 };
+	//int arr2[] = { 6, 1, 2, 3, 4 };
+	//int n = sizeof(arr) / sizeof(arr[0]);
+	//int m = sizeof(arr2) / sizeof(arr2[0]);
+	///*Testcases::cycle_by_one(arr, n);*/
+	////Testcases::Rearrange_negatives(arr, n);
+	////Testcases::UnionArr(arr, arr2, n, m);
+	///*for (int i = 0; i < n; i++)
+	//{
+	//	std::cout << arr[i] << ' ';
+	//}*/
+	////daa.Pub_Excute_fun();
+	//int price[] = { 2, 30, 15, 10, 8, 25, 80 };
+	//int n1 = sizeof(price) / sizeof(price[0]);
+	//std::cout << "Maximum Profit = " << daa.maxProfit(price, n1);
+	////bst Implementation
+	////BST* bst = NULL;
+	////bst->Run_BST();
+
+	//////Pointer to pointer
+	////int** a = new int* ();
+	////*a = new int();
+
+	/**LinkedList*/
+	Node LinkedList;
+	LinkedList.RunLinkedList();
 
 	std::cin.get();
 }
