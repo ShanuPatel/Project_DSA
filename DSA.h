@@ -87,7 +87,7 @@ public:
 
 		*Head = temp;
 		return *Head;
-		delete[] temp;
+		delete temp;
 	}
 
 	void PrintList(Node* Head)
