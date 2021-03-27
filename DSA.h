@@ -101,19 +101,31 @@ public:
 		}
 		std::cout << "\n";
 	}
+	void InsertData(Node* Head, int data)
+	{
+		if (Head == nullptr)
+		{
+			std::cout << "The Given data cannot be assigned to null\n";
+		}
+
+		Node* temp = new Node();
+
+		temp->SetData(data);
+
+		temp->SetNext(Head->GetNext());
+
+		Head->SetNext(temp);
+
+		return;
+		delete temp;
+	}
 	void RunLinkedList()
 	{
 		Node* Head = nullptr;
-		int x, n;
-
-		std::cout << "Enter the ListRange:\n";
-		std::cin >> n;
-		for (int i = 0; i < n; i++)
-		{
-			std::cout << "Enter The " << i << " Number: \n";
-			std::cin >> x;
-			Insert(&Head, x);
-			PrintList(Head);
-		}
+		//int x, n;
+		Insert(&Head, 2);
+		Insert(&Head, 4);
+		InsertData(Head->GetNext(), 14);
+		PrintList(Head);
 	}
 };
