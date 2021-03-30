@@ -89,7 +89,29 @@ public:
 		return *Head;
 		delete temp;
 	}
+	void AppendList(Node** Head, int Data)
+	{
+		Node* temp = new Node();
 
+		Node* LastNode = *Head;
+
+		temp->SetData(Data);
+		temp->SetNext(nullptr);
+
+		if (*Head == nullptr)
+		{
+			*Head = temp;
+			return;
+		}
+		// else Traverse till last node.
+
+		while (LastNode->GetNext() != nullptr)
+		{
+			LastNode = LastNode->GetNext();
+		}
+		LastNode->SetNext(temp);
+		return;
+	}
 	void PrintList(Node* Head)
 	{
 		std::cout << "Data list : ";
@@ -132,20 +154,33 @@ public:
 		return;
 		delete temp;
 	}
+	int LinkedList_Count(Node* Head)
+	{
+		int count = 0;
+
+		Node* Current = Head;
+		while (Current != nullptr)
+		{
+			count++;
+			Current = Current->GetNext();
+		}
+		std::cout << "Number of Elements: " << count;
+		return count;
+	}
 	void RunLinkedList()
 	{
 		Node* Head = nullptr;
-		int n, x;
-		std::cout << "enter the number of Elements\n";
-		std::cin >> x;
-		for (int i = 0; i < x; i++)
-		{
-			std::cin >> n;
-			Insert(&Head, n);
-			PrintList(Head);
-		}
-		Insert(&Head, 12);
-		InsertAt(&Head, 14, 7);
+
+		Insert(&Head, 6);
+		Insert(&Head, 7);
+		Insert(&Head, 8);
 		PrintList(Head);
+		std::cout<<"after Appending and inserting\n";
+		InsertAt(&Head, 18, 2);
+		AppendList(&Head, 16);
+		PrintList(Head);
+		std::cout << "LinkedList elements:\n";
+		LinkedList_Count(Head);
+		delete Head;
 	}
 };
