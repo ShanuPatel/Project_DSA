@@ -15,7 +15,7 @@ class DSA
 	int maxSubArray(std::vector<int>& nums);
 	void cycle_by_one(int arr[], int n);
 	void Rearrange_negatives(int arr[], int n);
-    int getMinDiff(int arr[], int n, int k);
+	int getMinDiff(int arr[], int n, int k);
 	int jump_To_end(int arr[], int n);
 	int findDuplicate3(std::vector<int>& nums);
 	int Long_subsequnce(int arr[], int n);
@@ -87,7 +87,6 @@ public:
 
 		*Head = temp;
 		return *Head;
-		delete temp;
 	}
 	void AppendList(Node** Head, int Data)
 	{
@@ -152,7 +151,18 @@ public:
 		temp->SetNext(temp2->GetNext());
 		temp2->SetNext(temp);
 		return;
-		delete temp;
+	}
+	//Print Listed using Recurstion
+	void Recursion_Print(Node* Head)
+	{
+		if (Head == nullptr)
+		{
+			return;
+		}
+
+		std::cout << ' ' << Head->GetData(); //comment to Do Reverse the Linked list
+		Recursion_Print(Head->GetNext());
+		//std::cout << ' ' << Head->GetData();//unComment to Reverse the linked List recursivly
 	}
 	int LinkedList_Count(Node* Head)
 	{
@@ -175,11 +185,12 @@ public:
 		Insert(&Head, 7);
 		Insert(&Head, 8);
 		PrintList(Head);
-		std::cout<<"after Appending and inserting\n";
+		std::cout << "after Appending and inserting\n";
 		InsertAt(&Head, 18, 2);
 		AppendList(&Head, 16);
-		PrintList(Head);
-		std::cout << "LinkedList elements:\n";
+		std::cout << "Recursive_Print DataList:\n";
+		Recursion_Print(Head);
+		std::cout << "\nLinkedList elements:\n";
 		LinkedList_Count(Head);
 		delete Head;
 	}
