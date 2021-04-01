@@ -152,6 +152,27 @@ public:
 		temp2->SetNext(temp);
 		return;
 	}
+	void DeleteNode(Node **Head, int n)
+    {
+        Node *temp = *Head;
+
+        if (n == 1)
+        {
+            *Head = temp->GetNext();
+            delete temp;
+            std::cout << "\nAfter Deletion of Head Node\n";
+            return;
+        }
+
+        for (int i = 0; i < n - 2; i++)
+        {
+            temp = temp->GetNext();
+        }
+        Node *temp2 = temp->GetNext();
+        temp->SetNext(temp2->GetNext());
+        delete temp2;
+        std::cout << "\nAfter Deletion of Node\n";
+    }
 	//Print Listed using Recurstion
 	void Recursion_Print(Node* Head)
 	{
@@ -174,7 +195,7 @@ public:
 			count++;
 			Current = Current->GetNext();
 		}
-		std::cout << "Number of Elements: " << count;
+		std::cout << "\nNumber of Elements: " << count;
 		return count;
 	}
 	void RunLinkedList()
@@ -184,13 +205,13 @@ public:
 		Insert(&Head, 6);
 		Insert(&Head, 7);
 		Insert(&Head, 8);
-		PrintList(Head);
 		std::cout << "after Appending and inserting\n";
 		InsertAt(&Head, 18, 2);
 		AppendList(&Head, 16);
+		PrintList(Head);
+		DeleteNode(&Head, 2);
 		std::cout << "Recursive_Print DataList:\n";
 		Recursion_Print(Head);
-		std::cout << "\nLinkedList elements:\n";
 		LinkedList_Count(Head);
 		delete Head;
 	}
