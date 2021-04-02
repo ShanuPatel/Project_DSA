@@ -1,7 +1,5 @@
 
 #include "DSA.h"
-#include <list>
-
 
 void merge(int arr[], int l, int m, int n);
 void merge_sort(int arr[], int l, int r)
@@ -267,138 +265,66 @@ namespace Testcases
 		Testcases::Palin(121);
 	}
 }
-//#include <iostream>
-//struct BST
-//{
-//	int data;
-//	BST* left;
-//	BST* right;
-//};
-//
-//BST* GetNewNode(int data)
-//{
-//	BST* newNode = new BST();
-//	newNode->data = data;
-//	newNode->left = newNode->right = NULL;
-//	return newNode;
-//}
-//
-//BST* Insert_BST(BST* root, int data);
-//bool search_BST(BST* root, int data);
-//
-//int main()
-//{
-//	BST* root = NULL;
-//	root = Insert_BST(root, 15);
-//	root = Insert_BST(root, 55);
-//	root = Insert_BST(root, 45);
-//	root = Insert_BST(root, 35);
-//	root = Insert_BST(root, 25);
-//
-//	int number;
-//	std::cout << "Enter the number to be searched\n";
-//	std::cin >> number;
-//
-//	if (search_BST(root, number) == true)
-//		std::cout << "Number Found \n";
-//	else
-//		std::cout << "Not Found\n";
-//}
-//
-//BST* Insert_BST(BST* root, int data)
-//{
-//	if (root == NULL)
-//	{
-//		root = GetNewNode(data);
-//	}
-//	else if (data <= root->data)
-//	{
-//		root->left = Insert_BST(root->left, data);
-//	}
-//	else
-//	{
-//		root->right = Insert_BST(root->right, data);
-//	}
-//	return root;
-//}
-//
-//
-//bool search_BST(BST* root, int data)
-//{
-//	if (root == NULL)
-//	{
-//		return false;
-//	}
-//	else if (root->data == data)
-//		return true;
-//
-//	else if (data <= root->data)
-//		return search_BST(root->left, data);
-//
-//	else
-//	{
-//		return search_BST(root->right, data);
-//	}
-//
-//}
-class HashTable
+
+
+
+void ExutionFunction()
 {
-private:
-	static const int Hashtag = 10;
-	std::list<std::pair<int, std::string>>table[Hashtag];
-public:
-	bool bIsEmpty()const;
-	int HashFunction(int key);
-	void insertitem(int Key, std::string value);
-	void removeItem(int key);
-	void printTable();
-};
+	/**merge sort*/
+//int arr[] = { 12, 11, 13, 5, 6, 7 };
+//int n = sizeof(arr) / sizeof(arr[0]);
+//merge_sort(arr, 0, n - 1);
+//for (int i = 0; i < n; i++)
+//{
+//	std::cout << arr[i] << " ";
+//}
+
+/**Data Structure Main Object Crearion*/
+//DSA daa;
+////daa.Pub_Excute_fun();
+////Testcases::Vector_Excution();
+////int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
+////int arr[] = { 9, 8, 7, 6, 4, 2, 1, 3 };
+//int arr[] = { 1, 2, 3, 4, 5 };
+//int arr2[] = { 6, 1, 2, 3, 4 };
+//int n = sizeof(arr) / sizeof(arr[0]);
+//int m = sizeof(arr2) / sizeof(arr2[0]);
+///*Testcases::cycle_by_one(arr, n);*/
+////Testcases::Rearrange_negatives(arr, n);
+////Testcases::UnionArr(arr, arr2, n, m);
+///*for (int i = 0; i < n; i++)
+//{
+//	std::cout << arr[i] << ' ';
+//}*/
+////daa.Pub_Excute_fun();
+//int price[] = { 2, 30, 15, 10, 8, 25, 80 };
+//int n1 = sizeof(price) / sizeof(price[0]);
+//std::cout << "Maximum Profit = " << daa.maxProfit(price, n1);
+////bst Implementation
+////BST* bst = NULL;
+////bst->Run_BST();
+
+//////Pointer to pointer
+////int** a = new int* ();
+////*a = new int();
+}
 
 int main()
 {
-	/**merge sort*/
-	//int arr[] = { 12, 11, 13, 5, 6, 7 };
-	//int n = sizeof(arr) / sizeof(arr[0]);
-	//merge_sort(arr, 0, n - 1);
-	//for (int i = 0; i < n; i++)
-	//{
-	//	std::cout << arr[i] << " ";
-	//}
-
-	/**Data Structure Main Object Crearion*/
-	//DSA daa;
-	////daa.Pub_Excute_fun();
-	////Testcases::Vector_Excution();
-	////int arr[] = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
-	////int arr[] = { 9, 8, 7, 6, 4, 2, 1, 3 };
-	//int arr[] = { 1, 2, 3, 4, 5 };
-	//int arr2[] = { 6, 1, 2, 3, 4 };
-	//int n = sizeof(arr) / sizeof(arr[0]);
-	//int m = sizeof(arr2) / sizeof(arr2[0]);
-	///*Testcases::cycle_by_one(arr, n);*/
-	////Testcases::Rearrange_negatives(arr, n);
-	////Testcases::UnionArr(arr, arr2, n, m);
-	///*for (int i = 0; i < n; i++)
-	//{
-	//	std::cout << arr[i] << ' ';
-	//}*/
-	////daa.Pub_Excute_fun();
-	//int price[] = { 2, 30, 15, 10, 8, 25, 80 };
-	//int n1 = sizeof(price) / sizeof(price[0]);
-	//std::cout << "Maximum Profit = " << daa.maxProfit(price, n1);
-	////bst Implementation
-	////BST* bst = NULL;
-	////bst->Run_BST();
-
-	//////Pointer to pointer
-	////int** a = new int* ();
-	////*a = new int();
+	/**HashTable**/
+	/*HashTable HT;
+	HT.printTable();*/
 
 	/**LinkedList*/
-	Node LinkedList;
-	LinkedList.RunLinkedList();
+	/*Node LinkedList;
+	LinkedList.RunLinkedList();*/
 
+	/**Doubly Linked List*/
+	DNode Head;
+	Head.DLinkRun();
 	std::cin.get();
+
+
 }
 
 bool HashTable::bIsEmpty() const
@@ -465,6 +391,7 @@ void HashTable::removeItem(int key)
 
 void HashTable::printTable()
 {
+	HashTable* HT = new HashTable();
 	for (int i{}; i < Hashtag; i++)
 	{
 		if (table[i].size() == 0)
@@ -477,8 +404,7 @@ void HashTable::printTable()
 		}
 	}
 
-	HashTable HT;
-	if (HT.bIsEmpty())
+	if (HT->bIsEmpty())
 	{
 		std::cout << "GoodJob: Practice on" << '\n';
 	}
@@ -486,17 +412,17 @@ void HashTable::printTable()
 	{
 		std::cout << "try again" << '\n';
 	}
-	HT.insertitem(905, "Aran");
-	HT.insertitem(905, "raran");
-	HT.insertitem(775, "bran");
-	HT.insertitem(546, "Eran");
-	HT.insertitem(123, "Vran");
+	HT->insertitem(905, "Aran");
+	HT->insertitem(905, "raran");
+	HT->insertitem(775, "bran");
+	HT->insertitem(546, "Eran");
+	HT->insertitem(123, "Vran");
 
-	HT.printTable();
-	HT.removeItem(123);
-	HT.removeItem(100);
+	HT->printTable();
+	HT->removeItem(123);
+	HT->removeItem(100);
 
-	if (HT.bIsEmpty())
+	if (HT->bIsEmpty())
 	{
 		std::cout << "GoodJob: Practice on! Check again" << '\n';
 	}
