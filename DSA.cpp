@@ -404,7 +404,90 @@ void DSA::Pub_Excute_fun()
 	Fact_largest(100);
 }
 
-BST* BST::GetNewNode(int data)
+//Douuble Linked list
+DNode* DNode::DGetNewNode(int x)
+{
+	DNode* m_Node = new DNode();
+
+	m_Node->data = x;
+	m_Node->Prev = nullptr;
+	m_Node->Next = nullptr;
+	return m_Node;
+}
+void DNode::InsertAt(DNode** Head, int x)
+{
+	DNode* new_Node = DGetNewNode(x);
+
+	new_Node->Next = *Head;
+	new_Node->Prev = nullptr;
+	if (*Head != nullptr)
+	{
+		(*Head)->Prev = new_Node;
+	}
+	*Head = new_Node;
+}
+
+void DNode::PrintList(DNode* Head)
+{
+
+	DNode* temp = Head;
+	std::cout << "Data List:";
+	while (temp != nullptr)
+	{
+		std::cout << " " << temp->data;
+		temp = temp->Next;
+	}
+}
+void DNode::ReversePrint(DNode* Head)
+{
+	DNode* Last = Head;
+	if (Head == NULL)
+		return;
+
+	while (Head != NULL)
+	{
+		std::cout << " " << Head->data;
+		Last = Head;
+		Head = Head->Next;
+	}
+
+	std::cout << "\nReverse:";
+
+	std::cout << "\nTraversal in reverse direction \n";
+	while (Last != NULL)
+	{
+		std::cout << " " << Last->data << " ";
+		Last = Last->Prev;
+	}
+
+	std::cout << std::endl;
+}
+int DNode::ListCount(DNode* Head)
+{
+	int count = 0;
+	while (Head != nullptr)
+	{
+		count++;
+		Head = Head->Next;
+	}
+	std::cout << "Number of Elements in the list are: "
+		<< count;
+	return count;
+};
+void DNode::DLinkRun()
+{
+	DNode* Head = nullptr;
+
+	Head->InsertAt(&Head, 2);
+	Head->InsertAt(&Head, 4);
+	Head->InsertAt(&Head, 6);
+	// Head->PrintList(Head);
+	Head->ReversePrint(Head);
+	Head->ListCount(Head);
+	delete Head;
+}
+
+BST* BST::BSTGetNewNode(int data)
 {
 	BST* newNode = new BST();
 	newNode->data = data;
@@ -416,7 +499,7 @@ BST* BST::Insert_BST(BST* root, int data)
 {
 	if (root == NULL)
 	{
-		root = GetNewNode(data);
+		root = BSTGetNewNode(data);
 	}
 	else if (data <= root->data)
 	{

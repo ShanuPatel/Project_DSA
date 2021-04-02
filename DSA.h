@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <list>
 
 class DSA
 {
@@ -43,7 +44,7 @@ class BST
 	BST* left;
 	BST* right;
 
-	BST* GetNewNode(int data);
+	BST* BSTGetNewNode(int data);
 	BST* Insert_BST(BST* root, int data);
 	bool search_BST(BST* root, int data);
 
@@ -215,4 +216,34 @@ public:
 		LinkedList_Count(Head);
 		delete Head;
 	}
+};
+
+class DNode
+{
+public:
+	int data;
+	DNode* Prev;
+	DNode* Next;
+
+public:
+	DNode* DGetNewNode(int x);
+	void InsertAt(DNode** Head, int x);
+	void PrintList(DNode* Head);
+	void ReversePrint(DNode* Head);
+	int ListCount(DNode* Head);
+	void DLinkRun();
+};
+
+
+class HashTable
+{
+private:
+	static const int Hashtag = 10;
+	std::list<std::pair<int, std::string>>table[Hashtag];
+public:
+	bool bIsEmpty()const;
+	int HashFunction(int key);
+	void insertitem(int Key, std::string value);
+	void removeItem(int key);
+	void printTable();
 };
