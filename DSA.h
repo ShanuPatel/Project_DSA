@@ -45,7 +45,7 @@ class BST
 	BST* right;
 
 	BST* BSTGetNewNode(int data);
-	BST* Insert_BST(BST* root, int data);
+	BST* Insert_BST(BST** root, int data);
 	bool search_BST(BST* root, int data);
 
 public:

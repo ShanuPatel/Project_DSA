@@ -319,9 +319,14 @@ int main()
 	/*Node LinkedList;
 	LinkedList.RunLinkedList();*/
 
+	/**BST */
+
+	BST bst;
+	bst.Run_BST();
+
 	/**Doubly Linked List*/
-	DNode Head;
-	Head.DLinkRun();
+	/*DNode Head;
+	Head.DLinkRun();*/
 	std::cin.get();
 
 
