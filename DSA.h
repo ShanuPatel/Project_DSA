@@ -60,162 +60,22 @@ class Node
 	Node* Next;
 
 public:
-	int GetData()
-	{
-		return data;
-	}
-	void SetData(int Data)
-	{
-		data = Data;
-	}
+	int GetData();
 
-	Node* GetNext()
-	{
-		return Next;
-	}
-
-	void SetNext(Node* next)
-	{
-		Next = next;
-	}
-
-	Node* Insert(Node** Head, int x)
-	{
-		Node* temp = new Node();
-
-		temp->SetData(x);
-		temp->SetNext(*Head);
-
-		*Head = temp;
-		return *Head;
-	}
-	void AppendList(Node** Head, int Data)
-	{
-		Node* temp = new Node();
-
-		Node* LastNode = *Head;
-
-		temp->SetData(Data);
-		temp->SetNext(nullptr);
-
-		if (*Head == nullptr)
-		{
-			*Head = temp;
-			return;
-		}
-		// else Traverse till last node.
-
-		while (LastNode->GetNext() != nullptr)
-		{
-			LastNode = LastNode->GetNext();
-		}
-		LastNode->SetNext(temp);
-		return;
-	}
-	void PrintList(Node* Head)
-	{
-		std::cout << "Data list : ";
-
-		while (Head != nullptr)
-		{
-			std::cout << " " << Head->GetData();
-			Head = Head->GetNext();
-		}
-		std::cout << "\n";
-	}
-	void InsertAt(Node** Head, int x, int n)
-	{
-		if (n == 0)
-		{
-			std::cout << "The Given data at 'n' cannot be assigned to null\n";
-		}
-
-		Node* temp = new Node();
-		temp->SetData(x);
-		if (n == 1)
-		{
-			temp->SetNext(nullptr);
-			*Head = temp;
-			return;
-		}
-
-		Node* temp2 = *Head;
-		if (Head == nullptr)
-		{
-			std::cout << "The Given data cannot be assigned to null\n";
-		}
-		for (int i = 0; i < n - 2; i++)
-		{
-			temp2 = temp2->GetNext();
-		}
-
-		temp->SetNext(temp2->GetNext());
-		temp2->SetNext(temp);
-		return;
-	}
-	void DeleteNode(Node **Head, int n)
-    {
-        Node *temp = *Head;
-
-        if (n == 1)
-        {
-            *Head = temp->GetNext();
-            delete temp;
-            std::cout << "\nAfter Deletion of Head Node\n";
-            return;
-        }
-
-        for (int i = 0; i < n - 2; i++)
-        {
-            temp = temp->GetNext();
-        }
-        Node *temp2 = temp->GetNext();
-        temp->SetNext(temp2->GetNext());
-        delete temp2;
-        std::cout << "\nAfter Deletion of Node\n";
-    }
+	void SetData(int Data);
+	Node* GetNext();
+	void SetNext(Node* next);
+	Node* Insert(Node** Head, int x);
+	void AppendList(Node** Head, int Data);
+	void PrintList(Node* Head);
+	void InsertAt(Node** Head, int x, int n);
+	void DeleteNode(Node** Head, int n);
 	//Print Listed using Recurstion
-	void Recursion_Print(Node* Head)
-	{
-		if (Head == nullptr)
-		{
-			return;
-		}
+	void Recursion_Print(Node* Head);
+	int LinkedList_Count(Node* Head);
 
-		std::cout << ' ' << Head->GetData(); //comment to Do Reverse the Linked list
-		Recursion_Print(Head->GetNext());
-		//std::cout << ' ' << Head->GetData();//unComment to Reverse the linked List recursivly
-	}
-	int LinkedList_Count(Node* Head)
-	{
-		int count = 0;
+	void RunLinkedList();
 
-		Node* Current = Head;
-		while (Current != nullptr)
-		{
-			count++;
-			Current = Current->GetNext();
-		}
-		std::cout << "\nNumber of Elements: " << count;
-		return count;
-	}
-	void RunLinkedList()
-	{
-		Node* Head = nullptr;
-
-		Insert(&Head, 6);
-		Insert(&Head, 7);
-		Insert(&Head, 8);
-		std::cout << "after Appending and inserting\n";
-		InsertAt(&Head, 18, 2);
-		AppendList(&Head, 16);
-		PrintList(Head);
-		DeleteNode(&Head, 2);
-		std::cout << "Recursive_Print DataList:\n";
-		Recursion_Print(Head);
-		LinkedList_Count(Head);
-		delete Head;
-	}
 };
 
 class DNode

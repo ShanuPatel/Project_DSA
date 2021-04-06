@@ -548,3 +548,167 @@ void BST::Run_BST()
 		std::cout << "Not Found\n";
 	delete root;
 }
+
+int Node::GetData()
+{
+	return data;
+}
+
+void Node::SetData(int Data)
+{
+	data = Data;
+}
+
+Node* Node::GetNext()
+{
+	return Next;
+}
+
+void Node::SetNext(Node* next)
+{
+	Next = next;
+}
+
+Node* Node::Insert(Node** Head, int x)
+{
+	Node* temp = new Node();
+
+	temp->SetData(x);
+	temp->SetNext(*Head);
+
+	*Head = temp;
+	return *Head;
+}
+
+void Node::AppendList(Node** Head, int Data)
+{
+	Node* temp = new Node();
+
+	Node* LastNode = *Head;
+
+	temp->SetData(Data);
+	temp->SetNext(nullptr);
+
+	if (*Head == nullptr)
+	{
+		*Head = temp;
+		return;
+	}
+	// else Traverse till last node.
+
+	while (LastNode->GetNext() != nullptr)
+	{
+		LastNode = LastNode->GetNext();
+	}
+	LastNode->SetNext(temp);
+	return;
+}
+
+void Node::PrintList(Node* Head)
+{
+	std::cout << "Data list : ";
+
+	while (Head != nullptr)
+	{
+		std::cout << " " << Head->GetData();
+		Head = Head->GetNext();
+	}
+	std::cout << "\n";
+}
+
+void Node::InsertAt(Node** Head, int x, int n)
+{
+	if (n == 0)
+	{
+		std::cout << "The Given data at 'n' cannot be assigned to null\n";
+	}
+
+	Node* temp = new Node();
+	temp->SetData(x);
+	if (n == 1)
+	{
+		temp->SetNext(nullptr);
+		*Head = temp;
+		return;
+	}
+
+	Node* temp2 = *Head;
+	if (Head == nullptr)
+	{
+		std::cout << "The Given data cannot be assigned to null\n";
+	}
+	for (int i = 0; i < n - 2; i++)
+	{
+		temp2 = temp2->GetNext();
+	}
+
+	temp->SetNext(temp2->GetNext());
+	temp2->SetNext(temp);
+	return;
+}
+
+void Node::DeleteNode(Node** Head, int n)
+{
+	Node* temp = *Head;
+
+	if (n == 1)
+	{
+		*Head = temp->GetNext();
+		delete temp;
+		std::cout << "\nAfter Deletion of Head Node\n";
+		return;
+	}
+
+	for (int i = 0; i < n - 2; i++)
+	{
+		temp = temp->GetNext();
+	}
+	Node* temp2 = temp->GetNext();
+	temp->SetNext(temp2->GetNext());
+	delete temp2;
+	std::cout << "\nAfter Deletion of Node\n";
+}
+
+void Node::Recursion_Print(Node* Head)
+{
+	if (Head == nullptr)
+	{
+		return;
+	}
+
+	std::cout << ' ' << Head->GetData(); //comment to Do Reverse the Linked list
+	Recursion_Print(Head->GetNext());
+	//std::cout << ' ' << Head->GetData();//unComment to Reverse the linked List recursivly
+}
+
+int Node::LinkedList_Count(Node* Head)
+{
+	int count = 0;
+
+	Node* Current = Head;
+	while (Current != nullptr)
+	{
+		count++;
+		Current = Current->GetNext();
+	}
+	std::cout << "\nNumber of Elements: " << count;
+	return count;
+}
+
+void Node::RunLinkedList()
+{
+	Node* Head = nullptr;
+
+	Insert(&Head, 6);
+	Insert(&Head, 7);
+	Insert(&Head, 8);
+	std::cout << "after Appending and inserting\n";
+	InsertAt(&Head, 18, 2);
+	AppendList(&Head, 16);
+	PrintList(Head);
+	DeleteNode(&Head, 2);
+	std::cout << "Recursive_Print DataList:\n";
+	Recursion_Print(Head);
+	LinkedList_Count(Head);
+	delete Head;
+}
