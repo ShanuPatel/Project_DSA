@@ -52,7 +52,7 @@ int DSA::Long_subsequnce(int arr[], int n)
 	int	Init_no = 0;
 	int Count = 0;
 
-	std::sort(arr, arr+n);
+	std::sort(arr, arr + n);
 
 	std::vector<int>vec;
 	vec.push_back(arr[0]);
@@ -134,7 +134,7 @@ void DSA::Fact_largest(int n)
 	{
 		R_size = Multiply_fact_largest(x, res, R_size);
 	}
-	std::cout<<'\n';
+	std::cout << '\n';
 	std::cout << "Factorial of given number is \n";
 	for (int i = R_size - 1; i >= 0; i--)
 		std::cout << res[i];
@@ -186,7 +186,7 @@ int DSA::maxProfit(int price[], int n)
 }
 
 //reverse of array
-void DSA::R_arr(int arr[], int n )
+void DSA::R_arr(int arr[], int n)
 {
 	int start = 0, end = n - 1;
 	while (start < end)
@@ -240,7 +240,7 @@ void DSA::Min_max_arr()
 			std::swap(arr[min_idx], arr[i]);
 		}
 	}
-	std::cout << "Smallest Element :"<<arr[0] << "\nLargest Element:"<<arr[n-1];
+	std::cout << "Smallest Element :" << arr[0] << "\nLargest Element:" << arr[n - 1];
 }
 
 //Kadanes algo
@@ -309,7 +309,7 @@ int DSA::getMinDiff(int arr[], int n, int k)
 //sum of two numbers
 void DSA::Two_sum()
 {
-	int arr[] = {3,2,3 };
+	int arr[] = { 3,2,3 };
 	int n = sizeof(arr) / sizeof(arr[0]);
 	int k = 6;
 	int i, j;
@@ -486,67 +486,64 @@ void DNode::DLinkRun()
 	delete Head;
 }
 
-BST* BST::BSTGetNewNode(int data)
+std::shared_ptr<BST> BST::BSTGetNewNode(int data)
 {
-	BST* newNode = new BST();
-	newNode->data = data;
-	newNode->left = newNode->right = NULL;
+	std::shared_ptr<BST> newNode = std::make_shared<BST>(data);
+	newNode->Left = nullptr;
+	newNode->Right = nullptr;
 	return newNode;
 }
 
-BST* BST::Insert_BST(BST** root, int data)
+void BST::Insert_BST(std::shared_ptr<BST>& root, int data)
 {
-	if (*root == NULL)
+	if (root == nullptr)
 	{
-		*root = BSTGetNewNode(data);
+		root = BSTGetNewNode(data);
+		return;
 	}
-	else if (data <= (*root)->data)
-	{
-		(*root)->left = Insert_BST(&(*root)->left, data);
-	}
-	else
-	{
-		(*root)->right = Insert_BST(&(*root)->right, data);
-	}
-	return *root;
+	(data > root->data) ? Insert_BST(root->Left, data) : Insert_BST(root->Right, data);
+}
+void BST::Insert(int data)
+{
+	Insert_BST(Root, data);
 }
 
-bool BST::search_BST(BST* root, int data)
+bool BST::search_BST(std::shared_ptr<BST>& root, int data)
 {
-	if (root == NULL)
-	{
+	if (root == nullptr)
 		return false;
-	}
+
 	else if (root->data == data)
+	{
 		return true;
-
-	else if (data <= root->data)
-		return search_BST(root->left, data);
-
+	}
+	else if (root->data <= data  )
+	{
+		return search_BST(root->Left, data);
+	}
 	else
 	{
-		return search_BST(root->right, data);
+		return search_BST(root->Right, data);
 	}
+}
+bool BST::Search(int data)
+{
+	return search_BST(Root, data);
 }
 
 void BST::Run_BST()
 {
-	BST* root = NULL;
-	root->Insert_BST(&root, 15);
-	root->Insert_BST(&root, 55);
-	root->Insert_BST(&root, 45);
-	root->Insert_BST(&root, 35);
-	root->Insert_BST(&root, 25);
+	Insert(15);
+	Insert(55);
+	Insert(45);
+	Insert(35);
+	Insert(25);
 
 	int number;
 	std::cout << "Enter the number to be searched\n";
 	std::cin >> number;
 
-	if (search_BST(root, number) == true)
-		std::cout << "Number Found \n";
-	else
-		std::cout << "Not Found\n";
-	delete root;
+	(Search(number)) ? std::cout << "Number Found \n" : std::cout << "Not Found\n";
 }
 
 int Node::GetData()
