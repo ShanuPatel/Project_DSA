@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <memory>
 #include <list>
 
 class DSA
@@ -40,16 +41,21 @@ public:
 
 class BST
 {
-	int data;
-	BST* left;
-	BST* right;
+	int data{};
+	std::shared_ptr<BST> Root;
+	std::shared_ptr<BST> Left;
+	std::shared_ptr<BST> Right;
 
-	BST* BSTGetNewNode(int data);
-	BST* Insert_BST(BST** root, int data);
-	bool search_BST(BST* root, int data);
+	std::shared_ptr<BST> BSTGetNewNode(int data);
+	void Insert_BST(std::shared_ptr<BST>& root, int data);
+	bool search_BST(std::shared_ptr<BST>& root, int data);
+	
 
 public:
-
+	BST() {};
+	BST(int data) :data(data), Left(nullptr), Right(nullptr) {}
+	void Insert(int data);
+	bool Search(int data);
 	void Run_BST();
 };
 
