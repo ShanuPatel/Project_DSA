@@ -29,14 +29,13 @@ class DSA
 	void Fact_largest(int n);
 
 	int countpair_sum(int arr[], int n, int sum);
-
-
-
 public:
 	//Maximum profit by buyingand selling a share at most twice
 	int maxProfit(int price[], int n);
 	void Rev_Exution();
 	void Pub_Excute_fun();
+	//Running Sum of 1d Array
+	std::vector<int> RunningSum(std::vector<int>& nums);
 };
 
 class BST
@@ -49,7 +48,7 @@ class BST
 	std::shared_ptr<BST> BSTGetNewNode(int data);
 	void Insert_BST(std::shared_ptr<BST>& root, int data);
 	bool search_BST(std::shared_ptr<BST>& root, int data);
-	
+
 
 public:
 	BST() {};
@@ -113,3 +112,4 @@ public:
 	void removeItem(int key);
 	void printTable();
 };
+

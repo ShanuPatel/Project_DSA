@@ -300,17 +300,24 @@ void ExutionFunction()
 //int price[] = { 2, 30, 15, 10, 8, 25, 80 };
 //int n1 = sizeof(price) / sizeof(price[0]);
 //std::cout << "Maximum Profit = " << daa.maxProfit(price, n1);
-////bst Implementation
-////BST* bst = NULL;
-////bst->Run_BST();
 
 //////Pointer to pointer
 ////int** a = new int* ();
 ////*a = new int();
+
 }
 
 int main()
 {
+	/**DSA Question*/
+	DSA Dsa;
+	std::vector<int>v({ 3, 1, 2, 10, 1 });
+	Dsa.RunningSum(v);
+	for (size_t i = 0; i < v.size(); i++)
+	{
+		std::cout << v[i] << ' ';
+	}
+
 	/**HashTable**/
 	/*HashTable HT;
 	HT.printTable();*/
@@ -320,15 +327,13 @@ int main()
 	LinkedList.RunLinkedList();*/
 
 	/**BST */
-
-	BST bst;
-	bst.Run_BST();
+	/*BST bst;
+	bst.Run_BST();*/
 
 	/**Doubly Linked List*/
 	/*DNode Head;
 	Head.DLinkRun();*/
 	std::cin.get();
-
 
 }
 
