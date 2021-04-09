@@ -155,6 +155,15 @@ int DSA::countpair_sum(int arr[], int n, int sum)
 	return count;
 }
 
+std::vector<int> DSA::RunningSum(std::vector<int>& nums)
+{
+	for (size_t i = 1; i < nums.size(); i++)
+	{
+		nums[i] += nums[i - 1];
+	}
+	return nums;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
@@ -336,47 +345,45 @@ void DSA::Two_sum()
 //Two sum problem 4ms brute
 std::vector<int> DSA::Two_sum_vector(std::vector<int>& nums, int target)
 {
+	std::vector<int> results;
+	int temp_indx, temp_indx2;
+	for (size_t i = 0; i < nums.size(); i++)
 	{
-		std::vector<int> results;
-		int temp_indx, temp_indx2;
-		for (size_t i = 0; i < nums.size(); i++)
+		temp_indx = i;
+		//std::cout << arr[temp_indx] << "i ";
+		for (size_t j = i + 1; j < nums.size(); j++)
 		{
-			temp_indx = i;
-			//std::cout << arr[temp_indx] << "i ";
-			for (size_t j = i + 1; j < nums.size(); j++)
+			temp_indx2 = j;
+			if (i == j)
 			{
-				temp_indx2 = j;
-				if (i == j)
+				continue;
+			}
+			else
+			{
+				int sum = nums[temp_indx] + nums[temp_indx2];
+				if (sum == target)
 				{
-					continue;
-				}
-				else
-				{
-					int sum = nums[temp_indx] + nums[temp_indx2];
-					if (sum == target)
+					if (results.size() < 2)
 					{
-						if (results.size() < 2)
-						{
 
-							results.push_back(i);
-							results.push_back(j);
-							std::cout << "indeies:" << i << " indices:" << j << '\n';
-						}
-						else
-						{
-							break;
-						}
+						results.push_back(i);
+						results.push_back(j);
+						std::cout << "indeies:" << i << " indices:" << j << '\n';
 					}
 					else
 					{
-						continue;
+						break;
 					}
 				}
-				return results;
+				else
+				{
+					continue;
+				}
 			}
+			return results;
 		}
-		return results;
 	}
+	return results;
 }
 
 void DSA::Rev_Exution()
