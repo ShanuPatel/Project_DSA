@@ -164,6 +164,33 @@ std::vector<int> DSA::RunningSum(std::vector<int>& nums)
 	return nums;
 }
 
+std::string DSA::defangIPaddr(std::string& address)
+{
+	for (int i = address.size() - 2; i >= 0; i--)
+	{
+		if (address[i + 1] == '.')
+		{
+			address = address.substr(0, i + 1) + "[.]" + address.substr(i + 2);
+		}
+	}
+	return address;
+}
+
+std::vector<bool> DSA::kidsWithCandies(std::vector<int>& candies, int extraCandies)
+{
+	std::vector<bool> out;
+	int Max = *max_element(candies.begin(), candies.end());
+	for (size_t i = 0; i < candies.size(); i++)
+	{
+		(candies[i] + extraCandies >= Max) ? out.push_back(true) : out.push_back(false);
+		if (candies[i] + extraCandies >= Max)
+			std::cout << " true ";
+		else
+			std::cout << " false ";
+	}
+	return out;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];

@@ -36,6 +36,10 @@ public:
 	void Pub_Excute_fun();
 	//Running Sum of 1d Array
 	std::vector<int> RunningSum(std::vector<int>& nums);
+	//Defanging an IP Address
+	std::string defangIPaddr(std::string& address);
+	//Kids With the Greatest Number of Candies
+	std::vector<bool> kidsWithCandies(std::vector<int>& candies, int extraCandies);
 };
 
 class BST
