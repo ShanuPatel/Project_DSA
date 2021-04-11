@@ -169,9 +169,7 @@ std::string DSA::defangIPaddr(std::string& address)
 	for (int i = address.size() - 2; i >= 0; i--)
 	{
 		if (address[i + 1] == '.')
-		{
 			address = address.substr(0, i + 1) + "[.]" + address.substr(i + 2);
-		}
 	}
 	return address;
 }
@@ -183,12 +181,31 @@ std::vector<bool> DSA::kidsWithCandies(std::vector<int>& candies, int extraCandi
 	for (size_t i = 0; i < candies.size(); i++)
 	{
 		(candies[i] + extraCandies >= Max) ? out.push_back(true) : out.push_back(false);
-		if (candies[i] + extraCandies >= Max)
-			std::cout << " true ";
-		else
-			std::cout << " false ";
 	}
 	return out;
+}
+
+int DSA::maximumWealth(std::vector<std::vector<int>>& accounts)
+{
+	int Richest = 0;
+	for(std::vector<int>&customers:accounts)
+	{
+		Richest = std::max(Richest, std::accumulate(customers.begin(), customers.end(), 0));
+	}
+	return Richest;
+}
+
+std::vector<int> DSA::shuffle(std::vector<int>& nums, int n)
+{
+	std::vector<int> v;
+	int j = n;
+	for (int i = 0; i < n; i++)
+	{
+		v.push_back(nums[i]);
+		v.push_back(nums[j]);
+		j++;
+	}
+	return v;
 }
 
 int DSA::maxProfit(int price[], int n)
@@ -551,7 +568,7 @@ bool BST::search_BST(std::shared_ptr<BST>& root, int data)
 	{
 		return true;
 	}
-	else if (root->data <= data  )
+	else if (root->data <= data)
 	{
 		return search_BST(root->Left, data);
 	}
