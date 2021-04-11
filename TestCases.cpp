@@ -18,9 +18,9 @@ void merge(int arr[], int l, int m, int r)
 	int n1 = m - l + 1;
 	int n2 = r - m;
 
-// making temp arrays
-	int *L=new int[n1];
-	int *R=new int[n2];
+	// making temp arrays
+	int* L = new int[n1];
+	int* R = new int[n2];
 
 	for (int i = 0; i < n1; i++)
 	{
@@ -79,9 +79,9 @@ namespace Testcases
 
 	void UnionArr(int arr[], int arr2[], int n, int m)
 	{
-		int i=0;
-		int j=0;
-		while (i<n && j<m)
+		int i = 0;
+		int j = 0;
+		while (i < n && j < m)
 		{
 			if (arr[i] < arr2[j])
 				std::cout << arr[i++] << ' ';
@@ -94,9 +94,9 @@ namespace Testcases
 				i++;
 			}
 		}
-		while (i<n)
+		while (i < n)
 		{
-			std::cout << arr[i++]<< ' ';
+			std::cout << arr[i++] << ' ';
 		}
 		while (j < m)
 		{
@@ -311,29 +311,32 @@ int main()
 {
 	/**DSA Question*/
 	DSA Dsa;
-	std::vector<int>v({ 3, 1, 2, 10, 1 });
-	Dsa.RunningSum(v);
-	for (size_t i = 0; i < v.size(); i++)
-	{
-		std::cout << v[i] << ' ';
-	}
+		/*std::vector<int>v({ 3, 1, 2, 10, 1 });
+		Dsa.RunningSum(v)*/;
+		std::vector<int>v({ 2,5,1,3,4,7 });
+		int n = 3;
+		v=Dsa.shuffle(v, n);
+		for (size_t i = 0; i < v.size(); i++)
+		{
+			std::cout << v[i] << ' ';
+		}
 
-	/**HashTable**/
-	/*HashTable HT;
-	HT.printTable();*/
+		/**HashTable**/
+		/*HashTable HT;
+		HT.printTable();*/
 
-	/**LinkedList*/
-	/*Node LinkedList;
-	LinkedList.RunLinkedList();*/
+		/**LinkedList*/
+		/*Node LinkedList;
+		LinkedList.RunLinkedList();*/
 
-	/**BST */
-	/*BST bst;
-	bst.Run_BST();*/
+		/**BST */
+		/*BST bst;
+		bst.Run_BST();*/
 
-	/**Doubly Linked List*/
-	/*DNode Head;
-	Head.DLinkRun();*/
-	std::cin.get();
+		/**Doubly Linked List*/
+		/*DNode Head;
+		Head.DLinkRun();*/
+		std::cin.get();
 
 }
 

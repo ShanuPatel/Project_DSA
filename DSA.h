@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <numeric>
 #include <list>
 
 class DSA
@@ -40,6 +41,10 @@ public:
 	std::string defangIPaddr(std::string& address);
 	//Kids With the Greatest Number of Candies
 	std::vector<bool> kidsWithCandies(std::vector<int>& candies, int extraCandies);
+	//Richest Customer Wealth
+	int maximumWealth(std::vector<std::vector<int>>& accounts);
+	//Shuffle the Array
+	std::vector<int> shuffle(std::vector<int>& nums, int n);
 };
 
 class BST
