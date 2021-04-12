@@ -6,6 +6,7 @@
 #include <memory>
 #include <numeric>
 #include <list>
+#include<unordered_map>
 
 class DSA
 {
@@ -45,6 +46,8 @@ public:
 	int maximumWealth(std::vector<std::vector<int>>& accounts);
 	//Shuffle the Array
 	std::vector<int> shuffle(std::vector<int>& nums, int n);
+	//Number of Good Pairs
+	int numIdenticalPairs(std::vector<int>& nums);
 };
 
 class BST
