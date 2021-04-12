@@ -311,32 +311,35 @@ int main()
 {
 	/**DSA Question*/
 	DSA Dsa;
-		/*std::vector<int>v({ 3, 1, 2, 10, 1 });
-		Dsa.RunningSum(v)*/;
-		std::vector<int>v({ 2,5,1,3,4,7 });
-		int n = 3;
-		v=Dsa.shuffle(v, n);
-		for (size_t i = 0; i < v.size(); i++)
-		{
-			std::cout << v[i] << ' ';
-		}
+	/*std::vector<int>v({ 3, 1, 2, 10, 1 });
+	Dsa.RunningSum(v)*/;
+	/**shuffle/
+	std::vector<int>v({ 2,5,1,3,4,7 });
+	int n = 3;
+	v=Dsa.shuffle(v, n);*/
+	std::vector<int> v({ 1, 2, 3, 1, 1, 3 });
+	Dsa.numIdenticalPairs(v);
+	for (size_t i = 0; i < v.size(); i++)
+	{
+		//std::cout << v[i] << ' ';
+	}
 
-		/**HashTable**/
-		/*HashTable HT;
-		HT.printTable();*/
+	/**HashTable**/
+	/*HashTable HT;
+	HT.printTable();*/
 
-		/**LinkedList*/
-		/*Node LinkedList;
-		LinkedList.RunLinkedList();*/
+	/**LinkedList*/
+	/*Node LinkedList;
+	LinkedList.RunLinkedList();*/
 
-		/**BST */
-		/*BST bst;
-		bst.Run_BST();*/
+	/**BST */
+	/*BST bst;
+	bst.Run_BST();*/
 
-		/**Doubly Linked List*/
-		/*DNode Head;
-		Head.DLinkRun();*/
-		std::cin.get();
+	/**Doubly Linked List*/
+	/*DNode Head;
+	Head.DLinkRun();*/
+	std::cin.get();
 
 }
 

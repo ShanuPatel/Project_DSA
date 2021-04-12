@@ -208,6 +208,18 @@ std::vector<int> DSA::shuffle(std::vector<int>& nums, int n)
 	return v;
 }
 
+int DSA::numIdenticalPairs(std::vector<int>& nums)
+{
+	int count = 0;
+	std::unordered_map<int, int>u_mp;
+	for (auto& i : nums)
+	{
+		count += u_mp[i]++;
+	}
+	std::cout << count;
+	return count;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
