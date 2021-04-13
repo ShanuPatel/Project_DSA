@@ -48,6 +48,21 @@ public:
 	std::vector<int> shuffle(std::vector<int>& nums, int n);
 	//Number of Good Pairs
 	int numIdenticalPairs(std::vector<int>& nums);
+	//Design Parking System
+	struct ParkingSystem
+	{
+		std::vector<int> count;
+
+		ParkingSystem(int big, int medium, int small)
+		{
+			count = { big, medium, small };
+		}
+
+		bool addCar(int carType)
+		{
+			return count[carType - 1]-- > 0;
+		}
+	};
 };
 
 class BST
