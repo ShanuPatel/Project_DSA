@@ -220,6 +220,35 @@ int DSA::numIdenticalPairs(std::vector<int>& nums)
 	return count;
 }
 
+std::string DSA::restoreString(std::string s, std::vector<int>& indices)
+{
+	std::string S = s;
+	for (size_t i = 0; i < indices.size(); i++)
+	{
+		S[indices[i]] = s[i];
+	}
+	return s;
+}
+
+int DSA::numberOfSteps(int num)
+{
+	int count = 0;
+	while (num != 0)
+	{
+		if (num % 2 != 1)
+		{
+			num = num / 2;
+			count++;
+		}
+		if (num % 2 == 1)
+		{
+			num = num - 1;
+			count++;
+		}
+	}
+	return count;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];

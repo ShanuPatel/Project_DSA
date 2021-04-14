@@ -63,6 +63,10 @@ public:
 			return count[carType - 1]-- > 0;
 		}
 	};
+	//Shuffle String
+	std::string restoreString(std::string s, std::vector<int>& indices);
+	//Number of Steps to Reduce a Number to Zero
+	int numberOfSteps(int num);
 };
 
 class BST
