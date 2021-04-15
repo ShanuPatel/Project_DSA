@@ -63,6 +63,10 @@ public:
 			return count[carType - 1]-- > 0;
 		}
 	};
+	//Decompress Run-Length Encoded List
+	std::vector<int> decompressRLElist(std::vector<int>& nums);
+	//Goal Parser Interpretation
+	std::string interpret(std::string command);
 	//Shuffle String
 	std::string restoreString(std::string s, std::vector<int>& indices);
 	//Number of Steps to Reduce a Number to Zero

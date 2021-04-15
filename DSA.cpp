@@ -188,7 +188,7 @@ std::vector<bool> DSA::kidsWithCandies(std::vector<int>& candies, int extraCandi
 int DSA::maximumWealth(std::vector<std::vector<int>>& accounts)
 {
 	int Richest = 0;
-	for(std::vector<int>&customers:accounts)
+	for (std::vector<int>& customers : accounts)
 	{
 		Richest = std::max(Richest, std::accumulate(customers.begin(), customers.end(), 0));
 	}
@@ -220,6 +220,40 @@ int DSA::numIdenticalPairs(std::vector<int>& nums)
 	return count;
 }
 
+std::vector<int> DSA::decompressRLElist(std::vector<int>& nums)
+{
+	std::vector<int> ans;
+	for (size_t i = 0; i < nums.size(); i += 2)
+	{
+		ans.insert(ans.end(), nums[i], nums[i += 1]);
+	}
+	return ans;
+}
+
+std::string DSA::interpret(std::string command)
+{
+	std::string ans;
+	size_t i = 0;
+	while (i < command.size())
+	{
+		if (command[i] == 'G')
+		{
+			ans += 'G';
+			++i;
+		}
+		else if (command[i + 1] == ')')
+		{
+			ans += 'o';
+			i += 2;
+		}
+		else
+		{
+			ans += "al";
+			i += 4;
+		}
+	}
+	return ans;
+}
 std::string DSA::restoreString(std::string s, std::vector<int>& indices)
 {
 	std::string S = s;
