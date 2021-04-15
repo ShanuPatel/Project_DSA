@@ -188,7 +188,7 @@ std::vector<bool> DSA::kidsWithCandies(std::vector<int>& candies, int extraCandi
 int DSA::maximumWealth(std::vector<std::vector<int>>& accounts)
 {
 	int Richest = 0;
-	for(std::vector<int>&customers:accounts)
+	for (std::vector<int>& customers : accounts)
 	{
 		Richest = std::max(Richest, std::accumulate(customers.begin(), customers.end(), 0));
 	}
@@ -218,6 +218,41 @@ int DSA::numIdenticalPairs(std::vector<int>& nums)
 	}
 	std::cout << count;
 	return count;
+}
+
+std::vector<int> DSA::decompressRLElist(std::vector<int>& nums)
+{
+	std::vector<int> ans;
+	for (size_t i = 0; i < nums.size(); i += 2)
+	{
+		ans.insert(ans.end(), nums[i], nums[i += 1]);
+	}
+	return ans;
+}
+
+std::string DSA::interpret(std::string command)
+{
+	std::string S;
+	size_t i = 0;
+	while (i < command.size())
+	{
+		if (command[i] == 'G')
+		{
+			S += 'G';
+			++i;
+		}
+		else if (command[i + 1] == ')')
+		{
+			S += 'o';
+			i += 2;
+		}
+		else
+		{
+			S += "al";
+			i += 4;
+		}
+	}
+	return S;
 }
 
 int DSA::maxProfit(int price[], int n)
