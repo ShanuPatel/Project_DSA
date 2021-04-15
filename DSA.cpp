@@ -232,27 +232,27 @@ std::vector<int> DSA::decompressRLElist(std::vector<int>& nums)
 
 std::string DSA::interpret(std::string command)
 {
-	std::string S;
+	std::string ans;
 	size_t i = 0;
 	while (i < command.size())
 	{
 		if (command[i] == 'G')
 		{
-			S += 'G';
+			ans += 'G';
 			++i;
 		}
 		else if (command[i + 1] == ')')
 		{
-			S += 'o';
+			ans += 'o';
 			i += 2;
 		}
 		else
 		{
-			S += "al";
+			ans += "al";
 			i += 4;
 		}
 	}
-	return S;
+	return ans;
 }
 
 int DSA::maxProfit(int price[], int n)
