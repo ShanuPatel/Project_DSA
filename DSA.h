@@ -67,6 +67,10 @@ public:
 	std::vector<int> decompressRLElist(std::vector<int>& nums);
 	//Goal Parser Interpretation
 	std::string interpret(std::string command);
+	//Shuffle String
+	std::string restoreString(std::string s, std::vector<int>& indices);
+	//Number of Steps to Reduce a Number to Zero
+	int numberOfSteps(int num);
 };
 
 class BST
