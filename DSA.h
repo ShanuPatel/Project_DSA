@@ -71,6 +71,7 @@ public:
 	std::string restoreString(std::string s, std::vector<int>& indices);
 	//Number of Steps to Reduce a Number to Zero
 	int numberOfSteps(int num);
+	std::vector<int> decode(std::vector<int>& encoded, int first);
 };
 
 class BST

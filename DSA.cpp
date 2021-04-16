@@ -284,6 +284,19 @@ int DSA::numberOfSteps(int num)
 	return count;
 }
 
+std::vector<int> DSA::decode(std::vector<int>& encoded, int first)
+{
+	std::vector<int> ans;
+	size_t i = 0;
+	ans.push_back(first);
+	while (i < encoded.size())
+	{
+		ans.push_back(ans[i] ^ encoded[i]);
+		i++;
+	}
+	return ans;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
