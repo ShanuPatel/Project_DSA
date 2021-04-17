@@ -446,4 +446,5 @@ void HashTable::printTable()
 	{
 		std::cout << "Good Practice more, try again" << '\n';
 	}
+	delete HT;
 }
