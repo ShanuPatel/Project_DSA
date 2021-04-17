@@ -297,6 +297,41 @@ std::vector<int> DSA::decode(std::vector<int>& encoded, int first)
 	return ans;
 }
 
+int DSA::countMatches(std::vector<std::vector<std::string>>& items, std::string ruleKey, std::string ruleValue)
+{
+	int count = 0, pos = 0;
+	if (ruleKey[0] == 't')
+	{
+		pos = 0;
+	}
+	else if (ruleKey[0] == 'c')
+	{
+		pos = 1;
+	}
+	else
+	{
+		pos = 2;
+	}
+	for (auto& itr : items)
+	{
+		if(itr[pos]==ruleValue)
+		{
+			count++;
+		}
+	}
+	return count;
+}
+
+std::vector<int> DSA::createTargetArray(std::vector<int>& nums, std::vector<int>& index)
+{
+	std::vector<int> v;
+	for (size_t i = 0; i < index.size(); i++)
+	{
+		v.insert(v.begin() + index[i], nums[i]);
+	}
+	return v;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
