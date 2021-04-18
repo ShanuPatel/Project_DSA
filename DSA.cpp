@@ -332,6 +332,37 @@ std::vector<int> DSA::createTargetArray(std::vector<int>& nums, std::vector<int>
 	return v;
 }
 
+int DSA::balancedStringSplit(std::string s)
+{
+	int count = 0, pair_count = 0;
+	for(size_t i = 0; i < s.size(); i++)
+	{
+		if (s[i] == 'R')
+		{
+			count++;
+		}
+		else if (s[i] == 'L')
+		{
+			count--;
+		}
+		if (count == 0)
+		{
+			pair_count++;
+		}
+	}
+	return pair_count;
+}
+
+int DSA::xorOperation(int n, int start)
+{
+	int  ans = 0;
+	for (int i = 0; i < n; ++i)
+	{
+		ans ^= start + 2 * i;
+	}
+	return ans;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
