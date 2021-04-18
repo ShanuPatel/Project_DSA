@@ -77,6 +77,10 @@ public:
 	int countMatches(std::vector<std::vector<std::string>>& items, std::string ruleKey, std::string ruleValue);
 	//Create Target Array in the Given Order
 	std::vector<int> createTargetArray(std::vector<int>& nums, std::vector<int>& index);
+	//Split a String in Balanced Strings
+	int balancedStringSplit(std::string s);
+	//XOR Operation in an Array
+	int xorOperation(int n, int start);
 };
 
 class BST
