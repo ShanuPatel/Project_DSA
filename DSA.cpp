@@ -898,6 +898,26 @@ int Node::LinkedList_Count(Node* Head)
 	return count;
 }
 
+Node* Node::removeNthFromEnd(Node* head, int n)
+{
+	Node* temp = head, * temp2 = head;
+	for (int i = 0; i < n; ++i)
+		temp = temp->GetNext();
+
+	// if node is NULL n is equal to the length of the linked list and we have to remove the head
+	if (temp == NULL)
+		return head->GetNext();
+
+	while (temp->GetNext() != NULL)
+	{
+		temp = temp->GetNext();
+		temp2 = temp2->GetNext();
+	}
+	temp2->SetNext(temp2->GetNext()->GetNext());
+	return head;
+
+}
+
 void Node::RunLinkedList()
 {
 	Node* Head = nullptr;

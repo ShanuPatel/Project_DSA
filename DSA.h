@@ -123,7 +123,7 @@ public:
 	//Print Listed using Recurstion
 	void Recursion_Print(Node* Head);
 	int LinkedList_Count(Node* Head);
-
+	Node* removeNthFromEnd(Node* head, int n);
 	void RunLinkedList();
 
 };
