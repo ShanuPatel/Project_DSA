@@ -336,6 +336,24 @@ int main()
 	/*BST bst;
 	bst.Run_BST();*/
 
+	TreeNode Bst, * root = nullptr;
+	root = Bst.InsertNode(root, 10);
+	Bst.InsertNode(root, 5);
+	Bst.InsertNode(root, 15);
+	Bst.InsertNode(root, 3);
+	Bst.InsertNode(root, 7);
+	Bst.InsertNode(root, 13);
+	Bst.InsertNode(root, 18);
+	Bst.InsertNode(root, 1);
+	Bst.InsertNode(root, 0);
+	Bst.InsertNode(root, 6);
+
+	Bst.printBT(root);
+	int x = 0;
+	x = Bst.rangeSumBST(root, 6, 10);
+	std::cout << "sum is\n"
+		<< x << '\n';
+
 	/**Doubly Linked List*/
 	/*DNode Head;
 	Head.DLinkRun();*/
