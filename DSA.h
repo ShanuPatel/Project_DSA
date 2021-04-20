@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -81,6 +81,66 @@ public:
 	int balancedStringSplit(std::string s);
 	//XOR Operation in an Array
 	int xorOperation(int n, int start);
+
+
+};
+//Range Sum of BST
+class TreeNode
+{
+	int val;
+	TreeNode* left;
+	TreeNode* right;
+	int res = 0;
+
+public:
+	TreeNode() : val(0), left(nullptr), right(nullptr) {}
+	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+	TreeNode(int x, TreeNode* Left, TreeNode* Right) : val(x), left(Left), right(Right) {}
+
+	TreeNode* InsertNode(TreeNode* Root, int data)
+	{
+		if (Root == nullptr)
+		{
+			return Root = new TreeNode(data);
+		}
+		(data < Root->val) ? Root->right = InsertNode(Root->right, data) : Root->left = InsertNode(Root->left, data);
+		return Root;
+	}
+
+	int rangeSumBST(TreeNode* root, int low, int high)
+	{
+		if (root == NULL)
+			return 0;
+		if (root->val >= low and root->val <= high)
+			res += root->val;
+
+		rangeSumBST(root->left, low, high);
+		rangeSumBST(root->right, low, high);
+
+		return res;
+	}
+
+public:
+	void printBT(const std::string& prefix, const TreeNode* node, bool isLeft)
+	{
+		if (node != nullptr)
+		{
+			std::cout << prefix;
+
+			std::cout << (isLeft ? "|-" : "|_");
+
+			// print the value of the node
+			std::cout << node->val << std::endl;
+
+			// enter the next tree level - left and right branch
+			printBT(prefix + (isLeft ? "|   " : "    "), node->left, true);
+			printBT(prefix + (isLeft ? "|   " : "    "), node->right, false);
+		}
+	}
+	void printBT(const TreeNode* node)
+	{
+		printBT("", node, false);
+	}
 };
 
 class BST
