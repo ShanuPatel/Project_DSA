@@ -81,7 +81,8 @@ public:
 	int balancedStringSplit(std::string s);
 	//XOR Operation in an Array
 	int xorOperation(int n, int start);
-
+	//Check If Two String Arrays are Equivalent
+	bool arrayStringsAreEqual(std::vector<std::string>& word1, std::vector<std::string>& word2);
 
 };
 //Range Sum of BST

@@ -363,6 +363,27 @@ int DSA::xorOperation(int n, int start)
 	return ans;
 }
 
+bool DSA::arrayStringsAreEqual(std::vector<std::string>& word1, std::vector<std::string>& word2)
+{
+	std::string s, s1;
+	for (size_t i = 0; i < word1.size(); ++i)
+	{
+		s += word1[i];
+	}
+	for (size_t i = 0; i < word2.size(); ++i)
+	{
+		s1 += word2[i];
+	}
+	if (s == s1)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
