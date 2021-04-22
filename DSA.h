@@ -83,6 +83,10 @@ public:
 	int xorOperation(int n, int start);
 	//Check If Two String Arrays are Equivalent
 	bool arrayStringsAreEqual(std::vector<std::string>& word1, std::vector<std::string>& word2);
+	//Maximum Nesting Depth of the Parentheses
+	int maxDepth(std::string s);
+	// Reverse String
+	void reverseString(std::vector<char>& s);
 
 };
 //Range Sum of BST
