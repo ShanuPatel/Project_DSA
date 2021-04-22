@@ -384,6 +384,33 @@ bool DSA::arrayStringsAreEqual(std::vector<std::string>& word1, std::vector<std:
 	}
 }
 
+int DSA::maxDepth(std::string s)
+{
+	int count = 0, count_pair = 0;
+	for (char& i : s)
+	{
+		if (s[i] == '(')
+		{
+			count++;
+			count_pair += std::max(count, count_pair);
+		}
+		else if (s[i] == ')')
+		{
+			count--;
+		}
+	}
+	return count_pair;
+}
+
+void DSA::reverseString(std::vector<char>& s)
+{
+	int i = 0, n = s.size() - 1;
+	while(i < n)
+	{
+		std::swap(s[i++], s[n--]);
+	}
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
