@@ -87,6 +87,12 @@ public:
 	int maxDepth(std::string s);
 	// Reverse String
 	void reverseString(std::vector<char>& s);
+	//Single Number
+	int singleNumber(std::vector<int>& nums);
+	//Fizz Buzz
+	std::vector<std::string> fizzBuzz(int n);
+	//Majority Element
+	int majorityElement(std::vector<int>& nums);
 
 };
 //Range Sum of BST
