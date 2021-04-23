@@ -411,6 +411,67 @@ void DSA::reverseString(std::vector<char>& s)
 	}
 }
 
+int DSA::singleNumber(std::vector<int>& nums)
+{
+	int ans = 0;
+	for (int& i : nums)
+	{
+		ans ^= i;
+	}
+	return ans;
+}
+
+std::vector<std::string> DSA::fizzBuzz(int n)
+{
+	std::vector<std::string>ans;
+	for (int i = 1; i <= n; i++)
+	{
+		if (i % 3 == 0 && i % 5 == 0)
+		{
+			ans.push_back("FizzBuzz");
+		}
+		else if (i % 3 == 0)
+		{
+			ans.push_back("Fizz");
+		}
+		else if (i % 5 == 0)
+		{
+			ans.push_back("Buzz");
+		}
+		else
+		{
+			ans.push_back(std::to_string(i));
+		}
+	}
+	return ans;
+}
+
+int DSA::majorityElement(std::vector<int>& nums)
+{
+	int count = 0, n = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (n == 0)
+		{
+			count = nums[i];
+			n = 1;
+		}
+		else
+		{
+			if (count == nums[i])
+			{
+				count++;
+			}
+			else
+			{
+				count--;
+			}
+		}
+	}
+	return count;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
