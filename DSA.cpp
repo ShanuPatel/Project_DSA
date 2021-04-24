@@ -461,15 +461,28 @@ int DSA::majorityElement(std::vector<int>& nums)
 		{
 			if (count == nums[i])
 			{
-				count++;
+				n++;
 			}
 			else
 			{
-				count--;
+				n--;
 			}
 		}
 	}
 	return count;
+}
+
+int DSA::maxProfit(std::vector<int>& prices)
+{
+	int max_profit = 0;
+	for (size_t i = 1; i < prices.size(); i++)
+	{
+		if (prices[i] > prices[i - 1])
+		{
+			max_profit += prices[i] - prices[i - 1];
+		}
+	 }
+	return max_profit;
 }
 
 int DSA::maxProfit(int price[], int n)

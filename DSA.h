@@ -93,6 +93,8 @@ public:
 	std::vector<std::string> fizzBuzz(int n);
 	//Majority Element
 	int majorityElement(std::vector<int>& nums);
+	//Best time to buy and sell the stock II;
+	int maxProfit(std::vector<int>& prices);
 
 };
 //Range Sum of BST
