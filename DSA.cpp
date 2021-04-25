@@ -485,6 +485,58 @@ int DSA::maxProfit(std::vector<int>& prices)
 	return max_profit;
 }
 
+void DSA::moveZeroes(std::vector<int>& nums)
+{
+	int zeros = 0;
+	for (size_t i = 0; i < nums.size(); i++)
+	{
+		if (nums[i] != 0)
+		{
+			nums[zeros++] = nums[i];
+		}
+	}
+	for (size_t i = zeros; i < nums.size(); i++)
+	{
+		nums[i] = 0;
+	}
+}
+
+int DSA::titleToNumber(std::string columnTitle)
+{
+	int ans = 0;
+	for (const auto& i : columnTitle)
+	{
+		ans *= 26;
+		ans += i - 'A' + 1;
+	}
+	return ans;
+}
+
+int DSA::romanToInt(std::string s)
+{
+	std::unordered_map<char, int> nums = {
+	  {'I', 1},
+	  {'V', 5},
+	  {'X', 10},
+	  {'L', 50},
+	  {'c', 100},
+	  {'D', 500},
+	  {'M', 1000} };
+	int ans = nums[s.back()];
+	for (int i = s.length() - 2; i >= 0; --i)
+	{
+		if (nums[s[i]] < nums[s[i + 1]])
+		{
+			ans -= nums[s[i]];
+		}
+		else
+		{
+			ans += nums[s[i]];
+		}
+	}
+	return ans;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];

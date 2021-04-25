@@ -95,7 +95,12 @@ public:
 	int majorityElement(std::vector<int>& nums);
 	//Best time to buy and sell the stock II;
 	int maxProfit(std::vector<int>& prices);
-
+	//Move Zeroes
+	void moveZeroes(std::vector<int>& nums);
+	//Excel Sheet Column Number
+	int titleToNumber(std::string columnTitle);
+	//Roman to Integer
+	int romanToInt(std::string s);
 };
 //Range Sum of BST
 class TreeNode
