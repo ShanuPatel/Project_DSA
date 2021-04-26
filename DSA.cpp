@@ -552,6 +552,18 @@ std::vector<std::vector<int>> DSA::generate(int numRows)
 	return res;
 }
 
+int DSA::missingNumber(std::vector<int>& nums)
+{
+	{
+		int ans = 0;//(nums.size() + 1) * (nums.size() + 2) / 2;
+		for (size_t i = 0; i < nums.size(); ++i)
+		{
+			ans += (i + 1) - nums[i];
+		}
+		return ans;
+	}
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
