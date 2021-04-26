@@ -537,6 +537,21 @@ int DSA::romanToInt(std::string s)
 	return ans;
 }
 
+std::vector<std::vector<int>> DSA::generate(int numRows)
+{
+	std::vector<std::vector<int>> res;
+	for (int i = 0; i < numRows; i++)
+	{
+		std::vector<int> rows(i + 1, 1);
+		for (int j = 1; j < i; j++)
+		{
+			rows[j] = res[i - 1][j - 1] + res[i - 1][j];
+		}
+		res.push_back(rows);
+	}
+	return res;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];

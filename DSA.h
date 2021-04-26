@@ -101,6 +101,8 @@ public:
 	int titleToNumber(std::string columnTitle);
 	//Roman to Integer
 	int romanToInt(std::string s);
+	//Pascal's Triangle
+	std::vector<std::vector<int>> generate(int numRows);
 };
 //Range Sum of BST
 class TreeNode
