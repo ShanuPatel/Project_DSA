@@ -103,6 +103,9 @@ public:
 	int romanToInt(std::string s);
 	//Pascal's Triangle
 	std::vector<std::vector<int>> generate(int numRows);
+	// missing number;
+	int missingNumber(std::vector<int>& nums);
+	
 };
 //Range Sum of BST
 class TreeNode
