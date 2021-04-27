@@ -564,6 +564,21 @@ int DSA::missingNumber(std::vector<int>& nums)
 	}
 }
 
+int DSA::firstUniqChar(std::string s)
+{
+	std::vector<int> freq(26, 0);
+	for (size_t i= 0; i < s.length(); ++i)
+	{
+		freq[s[i] - 'a'] += 1;
+	}
+	for (size_t i = 0; i < s.length(); ++i)
+	{
+		if(freq[s[i] - 'a'] == 1)
+		return i;
+	}
+	return -1;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
