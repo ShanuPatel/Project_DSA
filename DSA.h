@@ -105,7 +105,8 @@ public:
 	std::vector<std::vector<int>> generate(int numRows);
 	// missing number;
 	int missingNumber(std::vector<int>& nums);
-	
+	//First Unique Character in a String
+	int firstUniqChar(std::string s);
 };
 //Range Sum of BST
 class TreeNode
