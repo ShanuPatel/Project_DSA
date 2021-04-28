@@ -107,6 +107,8 @@ public:
 	int missingNumber(std::vector<int>& nums);
 	//First Unique Character in a String
 	int firstUniqChar(std::string s);
+	//Intersection of Two Arrays II
+	std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2);
 };
 //Range Sum of BST
 class TreeNode
