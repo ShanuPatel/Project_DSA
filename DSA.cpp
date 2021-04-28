@@ -579,6 +579,24 @@ int DSA::firstUniqChar(std::string s)
 	return -1;
 }
 
+std::vector<int> DSA::intersect(std::vector<int>& nums1, std::vector<int>& nums2)
+{
+	std::vector<int> ans;
+	std::unordered_map<int, int> u_Map;
+	for (size_t i = 0; i < nums1.size(); i++)
+	{
+		u_Map[nums1[i]]++;
+	}
+	for (size_t i = 0; i < nums2.size(); i++)
+	{
+		if (u_Map.find(nums1[i]) != u_Map.end() && --u_Map[nums2[i]] >= 0 )
+		{
+			ans.push_back(nums2[i]);
+		}
+	}
+	return ans;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
