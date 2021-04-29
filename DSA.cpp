@@ -597,6 +597,30 @@ std::vector<int> DSA::intersect(std::vector<int>& nums1, std::vector<int>& nums2
 	return ans;
 }
 
+int DSA::digitSquareSum(int n)
+{
+	int sum = 0, tmp;
+	while (n) {
+		tmp = n % 10;
+		sum += tmp * tmp;
+		n /= 10;
+	}
+	return sum;
+}
+
+bool DSA::isHappy(int n)
+{
+	int slow, fast;
+	slow = fast = n;
+	do {
+		slow = digitSquareSum(slow);
+		fast = digitSquareSum(fast);
+		fast = digitSquareSum(fast);
+		if (fast == 1) return 1;
+	} while (slow != fast);
+	return 0;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];

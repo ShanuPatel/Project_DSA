@@ -109,6 +109,9 @@ public:
 	int firstUniqChar(std::string s);
 	//Intersection of Two Arrays II
 	std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2);
+	//Happy number
+	int digitSquareSum(int n);
+	bool isHappy(int n);
 };
 //Range Sum of BST
 class TreeNode
