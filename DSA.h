@@ -112,6 +112,8 @@ public:
 	//Happy number
 	int digitSquareSum(int n);
 	bool isHappy(int n);
+	//Climbing Stairs //dyanmic programming
+	int climbStairs(int n);
 };
 //Range Sum of BST
 class TreeNode
