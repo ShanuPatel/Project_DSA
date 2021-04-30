@@ -621,6 +621,20 @@ bool DSA::isHappy(int n)
 	return 0;
 }
 
+int DSA::climbStairs(int n)
+{
+	int first = 1, second = 2;
+	if (n <= 2)
+		return n;
+	for (int i = 3; i < n; ++i)
+	{
+		int temp = second;
+		second += first;
+		first = temp;
+	}
+	return (first + second);
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
