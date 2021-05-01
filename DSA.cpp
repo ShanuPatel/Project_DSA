@@ -635,6 +635,49 @@ int DSA::climbStairs(int n)
 	return (first + second);
 }
 
+int DSA::removeDuplicates(std::vector<int>& nums)
+{
+	int count = 0;
+
+	for (size_t i = 1; i < nums.size(); ++i)
+	{
+		if (nums[i] == nums[i - 1])
+		{
+			++count;
+		}
+		else
+		{
+			nums[i - count] = nums[i];
+		}
+	}
+	nums.erase(nums.end() - count, nums.end());
+	return nums.size();
+}
+
+uint32_t DSA::reverseBits(uint32_t n)
+{
+	uint32_t revRes=0;
+	for (int i = 0; i < 32; ++i)
+	{
+		revRes <<= 1;
+		if (n & 1)
+		{
+			revRes++;
+		}
+		n >>= 1;
+	}
+	return revRes;
+}
+
+bool DSA::isPowerOfThree(int n)
+{
+	if (n <= 0 || n > MaxPower)
+	{
+		return false;
+	}
+	return MaxPower % n == 0;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];

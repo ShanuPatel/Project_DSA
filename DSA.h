@@ -10,6 +10,7 @@
 
 class DSA
 {
+	int const MaxPower = 1162261467;
 	//Reverse an array
 	void R_arr(int arr[], int n);
 	int R_Integers(int x);
@@ -32,10 +33,10 @@ class DSA
 
 	int countpair_sum(int arr[], int n, int sum);
 public:
-	//Maximum profit by buyingand selling a share at most twice
-	int maxProfit(int price[], int n);
 	void Rev_Exution();
 	void Pub_Excute_fun();
+	//Maximum profit by buying and selling a share at most twice
+	int maxProfit(int price[], int n);
 	//Running Sum of 1d Array
 	std::vector<int> RunningSum(std::vector<int>& nums);
 	//Defanging an IP Address
@@ -114,6 +115,12 @@ public:
 	bool isHappy(int n);
 	//Climbing Stairs //dyanmic programming
 	int climbStairs(int n);
+	//Remove Duplicates from Sorted Array
+	int removeDuplicates(std::vector<int>& nums);
+	//Reverse bits of a given 32 bits unsigned integer.
+	uint32_t reverseBits(uint32_t n);
+	//Power of Three
+	bool isPowerOfThree(int n);
 };
 //Range Sum of BST
 class TreeNode
