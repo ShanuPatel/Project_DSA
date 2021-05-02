@@ -121,6 +121,9 @@ public:
 	uint32_t reverseBits(uint32_t n);
 	//Power of Three
 	bool isPowerOfThree(int n);
+	//Merge two sorted arrays
+	void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
+
 };
 //Range Sum of BST
 class TreeNode
