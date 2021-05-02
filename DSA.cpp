@@ -678,6 +678,15 @@ bool DSA::isPowerOfThree(int n)
 	return MaxPower % n == 0;
 }
 
+void DSA::merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n)
+{
+	int i = m - 1, j = n - 1, k = m + n - 1;
+	while (j >= 0)
+	{
+		(i < 0 || nums2[j] >= nums1[i]) ? nums1[k--] = nums2[j--] : nums1[k--] = nums1[i--];
+	}
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
