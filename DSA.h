@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include <numeric>
+#include<stack>
 #include <list>
 #include<unordered_map>
 
@@ -123,6 +124,9 @@ public:
 	bool isPowerOfThree(int n);
 	//Merge two sorted arrays
 	void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
+	//valid parenthesise
+	bool isValid(std::string s);
+
 
 };
 //Range Sum of BST
