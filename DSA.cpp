@@ -687,6 +687,29 @@ void DSA::merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n)
 	}
 }
 
+bool DSA::isValid(std::string s)
+{
+	//     Input: s = "()[]{}"
+	// Output: true
+	std::stack<char> checks;
+	for (char& c : s)
+	{
+		if (c == '(' || c == '{' || c == '[')
+		{
+			checks.push(c);
+		}
+		else
+		{
+			if (checks.empty() || (checks.top() == '(' & c != ')') || (checks.top() == '{' & c != '}') || (checks.top() == '[' & c != ']'))
+			{
+				return false;
+			}
+			checks.pop();
+		}
+	}
+	return checks.empty();
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
