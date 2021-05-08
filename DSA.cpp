@@ -700,7 +700,7 @@ bool DSA::isValid(std::string s)
 		}
 		else
 		{
-			if (checks.empty() || (checks.top() == '(' & c != ')') || (checks.top() == '{' & c != '}') || (checks.top() == '[' & c != ']'))
+			if (checks.empty() || (checks.top() == '(' && c != ')') || (checks.top() == '{' && c != '}') || (checks.top() == '[' && c != ']'))
 			{
 				return false;
 			}
@@ -708,6 +708,16 @@ bool DSA::isValid(std::string s)
 		}
 	}
 	return checks.empty();
+}
+
+int DSA::trailingZeroes(int n)
+{
+	int count = 0;
+	for (auto i = 5; n / i > 0; i *= 5)
+	{
+		count += (n / i);
+	}
+	return count;
 }
 
 int DSA::maxProfit(int price[], int n)

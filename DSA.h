@@ -126,7 +126,8 @@ public:
 	void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
 	//valid parenthesise
 	bool isValid(std::string s);
-
+	//Factorial Trailing Zeroes
+	int trailingZeroes(int n);
 
 };
 //Range Sum of BST
