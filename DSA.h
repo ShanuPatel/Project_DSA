@@ -128,6 +128,10 @@ public:
 	bool isValid(std::string s);
 	//Factorial Trailing Zeroes
 	int trailingZeroes(int n);
+	//Valid Palindrome
+	bool isPalindrome(std::string s);
+	//Longest Common Prefix
+	std::string longestCommonPrefix(std::vector<std::string>& strs);
 
 };
 //Range Sum of BST

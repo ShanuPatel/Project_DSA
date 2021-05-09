@@ -720,6 +720,57 @@ int DSA::trailingZeroes(int n)
 	return count;
 }
 
+bool DSA::isPalindrome(std::string s)
+{
+	int i = 0, j = s.size() - 1;
+	while (i < j)
+	{
+		if (!isalnum(s[i]))
+		{
+			i++;
+			continue;
+		}
+		if (!isalnum(s[j]))
+		{
+			j--;
+			continue;
+		}
+		if (tolower(s[i++]) != tolower(s[j--]))
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+std::string DSA::longestCommonPrefix(std::vector<std::string>& strs)
+{
+//Input: strs = ["flower", "flow", "flight"]
+//Output : "fl"
+	std::string s = "";
+	if (strs.size() == 0)
+	{
+		return s;
+	}
+	for (size_t i = 0; i < strs[0].size(); i++)
+	{
+		size_t j = 1;
+		while (j < strs.size() && strs[j].size() > i)
+		{
+			if (strs[j][i] != strs[0][i])
+			{
+				return s;
+			}
+			j++;
+		}
+		if (j == strs.size())
+		{
+			s += strs[0][i];
+		}
+	}
+	return s;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];
