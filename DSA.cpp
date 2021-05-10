@@ -771,6 +771,40 @@ std::string DSA::longestCommonPrefix(std::vector<std::string>& strs)
 	return s;
 }
 
+int DSA::mySqrt(int x)
+{
+	long r = x;
+	while (r * r > x)
+	{
+		r = (r + x / r) / 2;
+	}
+	return r;
+}
+
+int DSA::strStr(std::string haystack, std::string needle)
+{
+//Input: haystack = "hello", needle = "ll"
+//Output : 2
+	int m = haystack.size(), n = needle.size();
+	for (int i = 0; i < m - n; i++)
+	{
+		int j = 0;
+		while (j < n)
+		{
+			if (haystack[i + j] != needle[j])
+			{
+				break;
+				j++;
+			}
+		}
+		if (j == n)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];

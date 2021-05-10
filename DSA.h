@@ -132,7 +132,10 @@ public:
 	bool isPalindrome(std::string s);
 	//Longest Common Prefix
 	std::string longestCommonPrefix(std::vector<std::string>& strs);
-
+	//Sqrt(x)
+	int mySqrt(int x);
+	//Implement strStr()
+	int strStr(std::string haystack, std::string needle);
 };
 //Range Sum of BST
 class TreeNode
