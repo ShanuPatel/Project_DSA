@@ -316,14 +316,18 @@ int main()
 	int n = 3;
 	v=Dsa.shuffle(v, n);*/
 	std::vector<int> v({ 1, 2, 3, 1, 1, 3 });
-	Dsa.numIdenticalPairs(v);
+	//Dsa.numIdenticalPairs(v);
+	int  i;
+	i = Dsa.countPrimes(10);
+	std::cout << i;
+	//i=Dsa.strStr("doll", "ll");
 	for (size_t i = 0; i < v.size(); i++)
 	{
 		//std::cout << v[i] << ' ';
 	}
 	std::string so;
 	std::vector<std::string>s({ "flower", "flow", "flight" });
-	Dsa.longestCommonPrefix(s);
+	//Dsa.longestCommonPrefix(s);
 
 	/**HashTable**/
 	/*HashTable HT;
@@ -335,7 +339,7 @@ int main()
 
 	/**BST */
 	/*BST bst;
-	bst.Run_BST();*/
+	bst.Run_BST();
 
 	TreeNode Bst, * root = nullptr;
 	root = Bst.InsertNode(root, 10);
@@ -353,11 +357,12 @@ int main()
 	int x = 0;
 	x = Bst.rangeSumBST(root, 6, 10);
 	std::cout << "sum is\n"
-		<< x << '\n';
+		<< x << '\n';*/
 
 	/**Doubly Linked List*/
 	/*DNode Head;
 	Head.DLinkRun();*/
+
 	std::cin.get();
 }
 

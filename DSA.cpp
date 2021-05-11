@@ -794,8 +794,8 @@ int DSA::strStr(std::string haystack, std::string needle)
 			if (haystack[i + j] != needle[j])
 			{
 				break;
-				j++;
 			}
+			j++;
 		}
 		if (j == n)
 		{
@@ -803,6 +803,28 @@ int DSA::strStr(std::string haystack, std::string needle)
 		}
 	}
 	return -1;
+}
+
+int DSA::countPrimes(int n)
+{
+//Input: n = 10
+//Output : 4
+//Explanation : There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+	if (n <= 2) return 0;
+	std::vector<bool> passed(n, false);
+	int sum = 1;
+	double upper = sqrt(n);
+	for (int i = 3; i < n; i += 2) {
+		if (!passed[i]) {
+			sum++;
+			//avoid overflow
+			if (i > upper) continue;
+			for (int j = i * i; j < n; j += i) {
+				passed[j] = true;
+			}
+		}
+	}
+	return sum;
 }
 
 int DSA::maxProfit(int price[], int n)
