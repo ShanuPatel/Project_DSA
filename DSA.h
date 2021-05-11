@@ -136,6 +136,8 @@ public:
 	int mySqrt(int x);
 	//Implement strStr()
 	int strStr(std::string haystack, std::string needle);
+	//count primes
+	int countPrimes(int n);
 };
 //Range Sum of BST
 class TreeNode
