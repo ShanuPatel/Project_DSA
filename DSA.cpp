@@ -827,6 +827,22 @@ int DSA::countPrimes(int n)
 	return sum;
 }
 
+int DSA::maximumPopulation(std::vector<std::vector<int>>& logs)
+{
+	int pop[2051] = {}, res = 0;
+	for (auto& i : logs)
+	{
+		++pop[i[0]];
+		--pop[i[1]];
+	}
+	for (auto i = 1950; i < 2050; ++i)
+	{
+		pop[i] += pop[i - 1];
+		res = pop[i] > pop[res] ? i : res;
+	}
+	return res;
+}
+
 int DSA::maxProfit(int price[], int n)
 {
 	int* profit = new int[n];

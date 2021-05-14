@@ -138,6 +138,8 @@ public:
 	int strStr(std::string haystack, std::string needle);
 	//count primes
 	int countPrimes(int n);
+	//Maximum population year
+	int maximumPopulation(std::vector<std::vector<int>>& logs); 
 };
 //Range Sum of BST
 class TreeNode
