@@ -264,8 +264,6 @@ namespace Testcases
 	}
 }
 
-
-
 void ExutionFunction()
 {
 	/**merge sort*/
@@ -303,67 +301,6 @@ void ExutionFunction()
 ////int** a = new int* ();
 ////*a = new int();
 
-}
-
-int main()
-{
-	/**DSA Question*/
-	DSA Dsa;
-	/*std::vector<int>v({ 3, 1, 2, 10, 1 });
-	Dsa.RunningSum(v)*/;
-	/**shuffle/
-	std::vector<int>v({ 2,5,1,3,4,7 });
-	int n = 3;
-	v=Dsa.shuffle(v, n);*/
-	std::vector<int> v({ 1, 2, 3, 1, 1, 3 });
-	//Dsa.numIdenticalPairs(v);
-	int  i;
-	i = Dsa.countPrimes(10);
-	std::cout << i;
-	//i=Dsa.strStr("doll", "ll");
-	for (size_t i = 0; i < v.size(); i++)
-	{
-		//std::cout << v[i] << ' ';
-	}
-	std::string so;
-	std::vector<std::string>s({ "flower", "flow", "flight" });
-	//Dsa.longestCommonPrefix(s);
-
-	/**HashTable**/
-	/*HashTable HT;
-	HT.printTable();*/
-
-	/**LinkedList*/
-	/*Node LinkedList;
-	LinkedList.RunLinkedList();*/
-
-	/**BST */
-	/*BST bst;
-	bst.Run_BST();
-
-	TreeNode Bst, * root = nullptr;
-	root = Bst.InsertNode(root, 10);
-	Bst.InsertNode(root, 5);
-	Bst.InsertNode(root, 15);
-	Bst.InsertNode(root, 3);
-	Bst.InsertNode(root, 7);
-	Bst.InsertNode(root, 13);
-	Bst.InsertNode(root, 18);
-	Bst.InsertNode(root, 1);
-	Bst.InsertNode(root, 0);
-	Bst.InsertNode(root, 6);
-
-	Bst.printBT(root);
-	int x = 0;
-	x = Bst.rangeSumBST(root, 6, 10);
-	std::cout << "sum is\n"
-		<< x << '\n';*/
-
-	/**Doubly Linked List*/
-	/*DNode Head;
-	Head.DLinkRun();*/
-
-	std::cin.get();
 }
 
 bool HashTable::bIsEmpty() const
@@ -457,7 +394,7 @@ void HashTable::printTable()
 	HT->insertitem(546, "Eran");
 	HT->insertitem(123, "Vran");
 
-	HT->printTable();
+	//HT->printTable();
 	HT->removeItem(123);
 	HT->removeItem(100);
 
@@ -470,4 +407,65 @@ void HashTable::printTable()
 		std::cout << "Good Practice more, try again" << '\n';
 	}
 	delete HT;
+}
+
+int main()
+{
+	/**DSA Question*/
+	DSA Dsa;
+	/*std::vector<int>v({ 3, 1, 2, 10, 1 });
+	Dsa.RunningSum(v)*/;
+	/**shuffle/
+	std::vector<int>v({ 2,5,1,3,4,7 });
+	int n = 3;
+	v=Dsa.shuffle(v, n);*/
+	std::vector<int> v({ 1, 2, 3, 1, 1, 3 });
+	//Dsa.numIdenticalPairs(v);
+	int  i;
+	i = Dsa.countPrimes(10);
+	std::cout << i;
+	//i=Dsa.strStr("doll", "ll");
+	for (size_t i = 0; i < v.size(); i++)
+	{
+		//std::cout << v[i] << ' ';
+	}
+	std::string so;
+	std::vector<std::string>s({ "flower", "flow", "flight" });
+	//Dsa.longestCommonPrefix(s);
+
+	/**HashTable**/
+	/*HashTable HT;
+	HT.printTable();*/
+
+	/**LinkedList*/
+	/*Node LinkedList;
+	LinkedList.RunLinkedList();*/
+
+	/**BST */
+	/*BST bst;
+	bst.Run_BST();
+
+	TreeNode Bst, * root = nullptr;
+	root = Bst.InsertNode(root, 10);
+	Bst.InsertNode(root, 5);
+	Bst.InsertNode(root, 15);
+	Bst.InsertNode(root, 3);
+	Bst.InsertNode(root, 7);
+	Bst.InsertNode(root, 13);
+	Bst.InsertNode(root, 18);
+	Bst.InsertNode(root, 1);
+	Bst.InsertNode(root, 0);
+	Bst.InsertNode(root, 6);
+
+	Bst.printBT(root);
+	int x = 0;
+	x = Bst.rangeSumBST(root, 6, 10);
+	std::cout << "sum is\n"
+		<< x << '\n';*/
+
+		/**Doubly Linked List*/
+		/*DNode Head;
+		Head.DLinkRun();*/
+
+	std::cin.get();
 }

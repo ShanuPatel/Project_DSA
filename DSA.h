@@ -5,9 +5,9 @@
 #include <vector>
 #include <memory>
 #include <numeric>
-#include<stack>
+#include <stack>
 #include <list>
-#include<unordered_map>
+#include <unordered_map>
 
 class DSA
 {
@@ -18,6 +18,7 @@ class DSA
 	void Two_sum();
 	std::vector<int> Two_sum_vector(std::vector<int>& nums, int target);
 	void Min_max_arr();
+	//MaximuimSubarray
 	int maxSubArray(std::vector<int>& nums);
 	void cycle_by_one(int arr[], int n);
 	void Rearrange_negatives(int arr[], int n);
@@ -139,8 +140,9 @@ public:
 	//count primes
 	int countPrimes(int n);
 	//Maximum population year
-	int maximumPopulation(std::vector<std::vector<int>>& logs); 
+	int maximumPopulation(std::vector<std::vector<int>>& logs);
 };
+
 //Range Sum of BST
 class TreeNode
 {
@@ -213,7 +215,7 @@ class BST
 
 
 public:
-	BST() {};
+	BST() = default;
 	BST(int data) :data(data), Left(nullptr), Right(nullptr) {}
 	void Insert(int data);
 	bool Search(int data);
@@ -267,6 +269,7 @@ class HashTable
 private:
 	static const int Hashtag = 10;
 	std::list<std::pair<int, std::string>>table[Hashtag];
+
 public:
 	bool bIsEmpty()const;
 	int HashFunction(int key);
