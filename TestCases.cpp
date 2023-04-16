@@ -330,15 +330,15 @@ int main()
 	//Dsa.longestCommonPrefix(s);*/
 
 	/**HashTable**/
-	/*HashTable HT;
-	HT.printTable();*/
+	HashTable HT;
+	HT.printTable();
 
 	/**LinkedList*/
 	/*Node LinkedList;
 	LinkedList.RunLinkedList();*/
 
 	/**BST */
-	BST bst;
+	/*BST bst;
 	bst.Run_BST();
 
 	TreeNode Bst, * root = nullptr;
@@ -357,7 +357,7 @@ int main()
 	int x = 0;
 	x = Bst.rangeSumBST(root, 6, 10);
 	std::cout << "sum is\n"
-		<< x << '\n';
+		<< x << '\n';*/
 
 	/**Doubly Linked List*/
 	/*DNode Head;

@@ -1203,6 +1203,9 @@ bool BST::Search(int data)
 
 void BST::Run_BST()
 {
+	/// <summary>
+	/// Added Comment Summary
+	/// </summary>
 	Insert(15);
 	Insert(55);
 	Insert(45);
