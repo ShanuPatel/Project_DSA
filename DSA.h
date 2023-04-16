@@ -16,7 +16,7 @@ class DSA
 	void R_arr(int arr[], int n);
 	int R_Integers(int x);
 	void Two_sum();
-	std::vector<int> Two_sum_vector(std::vector<int>& nums, int target);
+	std::vector<size_t> Two_sum_vector(std::vector<int>& nums, size_t target);
 	void Min_max_arr();
 	int maxSubArray(std::vector<int>& nums);
 	void cycle_by_one(int arr[], int n);
@@ -106,9 +106,9 @@ public:
 	//Pascal's Triangle
 	std::vector<std::vector<int>> generate(int numRows);
 	// missing number;
-	int missingNumber(std::vector<int>& nums);
+	size_t missingNumber(std::vector<int>& nums);
 	//First Unique Character in a String
-	int firstUniqChar(std::string s);
+	size_t firstUniqChar(std::string s);
 	//Intersection of Two Arrays II
 	std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2);
 	//Happy number
@@ -117,7 +117,7 @@ public:
 	//Climbing Stairs //dyanmic programming
 	int climbStairs(int n);
 	//Remove Duplicates from Sorted Array
-	int removeDuplicates(std::vector<int>& nums);
+	size_t removeDuplicates(std::vector<int>& nums);
 	//Reverse bits of a given 32 bits unsigned integer.
 	uint32_t reverseBits(uint32_t n);
 	//Power of Three
@@ -135,7 +135,7 @@ public:
 	//Sqrt(x)
 	int mySqrt(int x);
 	//Implement strStr()
-	int strStr(std::string haystack, std::string needle);
+	size_t strStr(std::string haystack, std::string needle);
 	//count primes
 	int countPrimes(int n);
 };

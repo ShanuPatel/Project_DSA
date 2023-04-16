@@ -368,8 +368,8 @@ int main()
 
 bool HashTable::bIsEmpty() const
 {
-	int sum{};
-	for (int i{}; i < Hashtag; i++)
+	size_t sum{};
+	for (size_t i{}; i < Hashtag; i++)
 	{
 		sum += table[i].size();
 	}
@@ -457,7 +457,7 @@ void HashTable::printTable()
 	HT->insertitem(546, "Eran");
 	HT->insertitem(123, "Vran");
 
-	HT->printTable();
+	//HT->printTable();
 	HT->removeItem(123);
 	HT->removeItem(100);
 

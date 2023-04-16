@@ -166,7 +166,7 @@ std::vector<int> DSA::RunningSum(std::vector<int>& nums)
 
 std::string DSA::defangIPaddr(std::string& address)
 {
-	for (int i = address.size() - 2; i >= 0; i--)
+	for (size_t i = address.size() - 2; i >= 0; i--)
 	{
 		if (address[i + 1] == '.')
 			address = address.substr(0, i + 1) + "[.]" + address.substr(i + 2);
@@ -404,7 +404,7 @@ int DSA::maxDepth(std::string s)
 
 void DSA::reverseString(std::vector<char>& s)
 {
-	int i = 0, n = s.size() - 1;
+	size_t i = 0, n = s.size() - 1;
 	while(i < n)
 	{
 		std::swap(s[i++], s[n--]);
@@ -523,7 +523,7 @@ int DSA::romanToInt(std::string s)
 	  {'D', 500},
 	  {'M', 1000} };
 	int ans = nums[s.back()];
-	for (int i = s.length() - 2; i >= 0; --i)
+	for (size_t i = s.length() - 2; i >= 0; --i)
 	{
 		if (nums[s[i]] < nums[s[i + 1]])
 		{
@@ -552,10 +552,10 @@ std::vector<std::vector<int>> DSA::generate(int numRows)
 	return res;
 }
 
-int DSA::missingNumber(std::vector<int>& nums)
+size_t DSA::missingNumber(std::vector<int>& nums)
 {
 	{
-		int ans = 0;//(nums.size() + 1) * (nums.size() + 2) / 2;
+		size_t ans = 0;//(nums.size() + 1) * (nums.size() + 2) / 2;
 		for (size_t i = 0; i < nums.size(); ++i)
 		{
 			ans += (i + 1) - nums[i];
@@ -564,7 +564,7 @@ int DSA::missingNumber(std::vector<int>& nums)
 	}
 }
 
-int DSA::firstUniqChar(std::string s)
+size_t DSA::firstUniqChar(std::string s)
 {
 	std::vector<int> freq(26, 0);
 	for (size_t i= 0; i < s.length(); ++i)
@@ -635,7 +635,7 @@ int DSA::climbStairs(int n)
 	return (first + second);
 }
 
-int DSA::removeDuplicates(std::vector<int>& nums)
+size_t DSA::removeDuplicates(std::vector<int>& nums)
 {
 	int count = 0;
 
@@ -722,7 +722,7 @@ int DSA::trailingZeroes(int n)
 
 bool DSA::isPalindrome(std::string s)
 {
-	int i = 0, j = s.size() - 1;
+	size_t i = 0, j = s.size() - 1;
 	while (i < j)
 	{
 		if (!isalnum(s[i]))
@@ -781,11 +781,11 @@ int DSA::mySqrt(int x)
 	return r;
 }
 
-int DSA::strStr(std::string haystack, std::string needle)
+size_t DSA::strStr(std::string haystack, std::string needle)
 {
 //Input: haystack = "hello", needle = "ll"
 //Output : 2
-	int m = haystack.size(), n = needle.size();
+	size_t m = haystack.size(), n = needle.size();
 	for (int i = 0; i < m - n; i++)
 	{
 		int j = 0;
@@ -1006,10 +1006,10 @@ void DSA::Two_sum()
 }
 
 //Two sum problem 4ms brute
-std::vector<int> DSA::Two_sum_vector(std::vector<int>& nums, int target)
+std::vector<size_t> DSA::Two_sum_vector(std::vector<int>& nums, size_t target)
 {
-	std::vector<int> results;
-	int temp_indx, temp_indx2;
+	std::vector<size_t> results;
+	size_t temp_indx, temp_indx2;
 	for (size_t i = 0; i < nums.size(); i++)
 	{
 		temp_indx = i;
@@ -1023,7 +1023,7 @@ std::vector<int> DSA::Two_sum_vector(std::vector<int>& nums, int target)
 			}
 			else
 			{
-				int sum = nums[temp_indx] + nums[temp_indx2];
+				size_t sum = nums[temp_indx] + nums[temp_indx2];
 				if (sum == target)
 				{
 					if (results.size() < 2)
